@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:linear-gradient(60deg, rgba(255, 0, 0, 0.45), rgba(0, 128, 0, 0.46), rgba(0, 0, 255, 0.34), rgba(255, 255, 0, 0.49));
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*overflow: scroll;*/
+}
+
+#game_container{
+    height: 85vh;
+    width:85vh;
+    background-color: rgba(0, 0, 0, 0.54);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top:-80px;
+}
+.vertically_stacked_containers{
+    height:40%;
+    width:100%;
+    display: flex;
+}
+.vertically_stacked_container_mid{
+    height:20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.player_containers{
+    height:100%;
+    width:40%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.resting_points{
+    width:35%;
+    height:35%;
+    border-radius: 200px;
+    background-color: white;
+}
+.playing_lines{
+    width:6.6666%;
+    height:100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.winning_lines{
+    width:6.6666%;
+    display: flex;
+    flex-direction: column;
+}
+.mid_lines{
+    width:40%;
+    height:100%;
+}
+.playing_lines_mid{
+    width:100%;
+    height:33%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.winning_lines_mid{
+    width:100%;
+    height:33%;
+    display: flex;
+    flex-direction: row;
+}
+.winning_portion{
+    background: linear-gradient(150deg, red,green,blue,yellow);
+    height:100%;
+    width:20%;
+}
+
+#red_player_container{
+    background: rgb(210, 4, 4);
+}
+#green_player_container{
+    background-color: #04b404;
+}
+#blue_player_container{
+    background: rgb(7, 91, 250);
+}
+#yellow_player_container{
+    background-color: #dae106;
+}
+#winning_container_image{
+    width: 100%;
+    height: 100%;
+}
+
+#yellow_winning_line{
+    background-color: #dae106;
+}
+#green_winning_line{
+    background-color: #04b404;
+}
+#blue_winning_line{
+    background-color: rgb(7, 91, 250);
+}
+#red_winning_line{
+    background-color: rgb(210, 4, 4);
+}
+
+.movable_line, .movable_line_winning{
+    border: solid black 1px;
+    height:16.66%;
+    width:100%;
+}
+.movable_line_mid, .movable_line_winning_mid{
+    border: solid black 1px;
+    width:16.66%;
+    height:100%;
+}
+
+
+.dice_player_section{
+    margin-top: 20px;
+    margin-bottom: -90px;
+    width:50%;
+    height: 80px;
+    border-radius: 15px;
+    background: linear-gradient(60deg, rgb(37, 3, 3), rgb(7, 31, 7), rgb(7, 7, 56), rgb(49, 49, 13));
+}

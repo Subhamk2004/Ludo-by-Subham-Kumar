@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ludo by Subham Kumar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game_container">
+
+    <div class="vertically_stacked_containers">
+
+        <div class="player_containers" id="red_player_container">
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+        </div>
+
+        <div class="playing_lines">
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+        </div>
+
+        <div class="winning_lines" id="green_winning_line">
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+        </div>
+
+        <div class="playing_lines">
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+        </div>
+
+        <div class="player_containers" id="green_player_container">
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+        </div>
+
+    </div>
+
+    <div class="vertically_stacked_container_mid">
+        <div class="mid_lines">
+            <div class="playing_lines_mid">
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+            </div>
+            <div class="winning_lines_mid" id="red_winning_line">
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+            </div>
+            <div class="playing_lines_mid">
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+            </div>
+        </div>
+
+        <div class="winning_portion">
+            <img id="winning_container_image" src="images/winning_container.jpeg" alt="">
+        </div>
+
+        <div class="mid_lines">
+            <div class="playing_lines_mid">
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+            </div>
+            <div class="winning_lines_mid" id="yellow_winning_line">
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+                <div class="movable_line_winning_mid"></div>
+            </div>
+            <div class="playing_lines_mid">
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+                <div class="movable_line_mid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertically_stacked_containers">
+        <div class="player_containers" id="blue_player_container">
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+        </div>
+
+        <div class="playing_lines">
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+        </div>
+        <div class="winning_lines" id="blue_winning_line">
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+            <div class="movable_line_winning"></div>
+        </div>
+        <div class="playing_lines">
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+            <div class="movable_line"></div>
+        </div>
+        <div class="player_containers" id="yellow_player_container">
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+            <div class="resting_points"></div>
+        </div>
+
+    </div>
+</div>
+<div class="dice_player_section">
+    <div class="dice"></div>
+    <div class="current_player"></div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
