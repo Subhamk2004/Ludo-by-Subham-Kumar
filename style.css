@@ -49,6 +49,9 @@ body{
     height:35%;
     border-radius: 200px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .playing_lines{
     width:6.6666%;
@@ -133,5 +136,63 @@ body{
     width:50%;
     height: 80px;
     border-radius: 15px;
-    background: linear-gradient(60deg, rgb(37, 3, 3), rgb(7, 31, 7), rgb(7, 7, 56), rgb(49, 49, 13));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    background: linear-gradient(60deg, rgba(37, 3, 3, 0.49), rgba(7, 31, 7, 0.55), rgba(7, 7, 56, 0.52), rgba(49, 49, 13, 0.51));
+}
+
+#dice{
+    width: 60px;
+    height: 60px;
+    background-color: #caf5cc;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition: ease-in-out all .3s;
+}
+#dice_output{
+    color: #121623;
+    font-weight: bolder;
+    font-size: 30px;
+}
+#current_player{
+    height: 60px;
+    width:60px;
+    background-color: rgb(7, 91, 250);
+    box-shadow: 0 5px 7px #000000;
+    border-radius: 50%;
+}
+
+.mover{
+    width: 25%;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.mover_img{
+    width: 100%;
+}
+/* specific locations coloring*/
+#l51, #l12, #l25, #l38{
+    background-color: white;
+}
+
+#l1{
+    background-color: rgb(210, 4, 4);
+}
+#l14{
+    background-color: #04b404;
+}
+#l27{
+    background-color: #dae106;
+}
+#l40{
+    background-color: rgb(7, 91, 250);
 }
