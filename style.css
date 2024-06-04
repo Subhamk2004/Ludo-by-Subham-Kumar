@@ -175,9 +175,11 @@ body{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 .mover_img{
     width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 /* specific locations coloring*/
 #l51, #l12, #l25, #l38{
