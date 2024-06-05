@@ -40,7 +40,8 @@ let global_object = {
             previous_location_y:40,
             id:'blue_mover_1',
             previous_result_x:0,
-            previous_result_y:0
+            previous_result_y:0,
+            has_entered_wining_line: false
         },
         blue_mover_2:{
             is_opened: false,
@@ -51,7 +52,8 @@ let global_object = {
             previous_location_y:40,
             id:'blue_mover_2',
             previous_result_x:0,
-            previous_result_y:0
+            previous_result_y:0,
+            has_entered_wining_line: false
         },
         blue_mover_3:{
             is_opened: false,
@@ -62,7 +64,8 @@ let global_object = {
             previous_location_y:40,
             id:'blue_mover_3',
             previous_result_x:0,
-            previous_result_y:0
+            previous_result_y:0,
+            has_entered_wining_line: false
         },
         blue_mover_4:{
             is_opened: false,
@@ -73,7 +76,8 @@ let global_object = {
             previous_location_y:40,
             id:'blue_mover_4',
             previous_result_x:0,
-            previous_result_y:0
+            previous_result_y:0,
+            has_entered_wining_line: false
         }
     }
 }
@@ -209,13 +213,23 @@ let mover_further = (inside_obs, dice_output) => {
     let previous_y = inside_obs.previous_location_y;
     let previous_pos = inside_obs.previous_location;
     let new_position_id = previous_pos + dice_output;
+    if (inside_obs.has_entered_wining_line === true)
+    {
+        winning_moves()
+        return;
+    }
     if (new_position_id > 51)
     {
         new_position_id = new_position_id - 52;
     }
-    else if (new_position_id === inside_obs.start_location-2)
+    if (new_position_id >= inside_obs.start_location-2 && previous_pos<inside_obs.start_location && inside_obs.has_entered_wining_line === false)
     {
-
+        let remaining_moves = new_position_id;
+        new_position_id = inside_obs.start_location-2
+        remaining_moves = remaining_moves - new_position_id;
+        inside_obs.has_entered_wining_line = true;
+        winning_moves(remaining_moves);
+        return;
     }
     inside_obs.previous_location = new_position_id;
     console.log(new_position_id);
@@ -240,4 +254,8 @@ let mover_further = (inside_obs, dice_output) => {
     console.log(`previously at ${previous_x} ${previous_y} currently at ${new_x_locator} ${new_y_locator}`)
     mover_actual.style.transform = `translate(${resultant_x}px,${resultant_y}px)`;
     clearInterval(animation_stop);
+}
+
+let winning_moves = (winner_moves) => {
+
 }
