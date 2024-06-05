@@ -11,7 +11,7 @@ let turn_checker = "blue";
 let dice_number = Number(0);
 let rotator = Number(0);
 let dice_turn_checker = Number(1);
-
+let red_condition = false;
 
 
 
@@ -296,6 +296,7 @@ let move_mover = (dice_number) => {
         animation_stop = setInterval(animate_mover, 700, blue_movers);
         actual_mover(dice_num, blue_movers);
         current_player_checker.style.backgroundColor = 'blue';
+        red_condition = false;
         if (dice_num !== 6){
             turn_checker = 'red';
         }
@@ -308,6 +309,7 @@ let move_mover = (dice_number) => {
         animation_stop = setInterval(animate_mover, 700, red_movers);
         actual_mover(dice_num, red_movers);
         current_player_checker.style.backgroundColor = 'red';
+        red_condition = true;
         if (dice_num !== 6){
             turn_checker = 'green';
         }
@@ -320,6 +322,7 @@ let move_mover = (dice_number) => {
         animation_stop = setInterval(animate_mover, 700, green_movers);
         current_player_checker.style.backgroundColor = 'green';
         actual_mover(dice_num, green_movers);
+        red_condition = false;
         if (dice_num !== 6){
             turn_checker = 'yellow';
         }
@@ -331,6 +334,7 @@ let move_mover = (dice_number) => {
         });
         current_player_checker.style.backgroundColor = 'yellow';
         animation_stop = setInterval(animate_mover, 700, yellow_movers);
+        red_condition = false;
         if (dice_num !== 6){
             turn_checker = 'blue';
         }
@@ -459,7 +463,7 @@ let mover_further = (inside_obs, dice_output) => {
     
     if (new_position_id > 51)
     {
-        if (turn_checker !== 'red')
+        if (!red_condition)
         {
             new_position_id = new_position_id - 52;
         }
@@ -508,7 +512,7 @@ let mover_further = (inside_obs, dice_output) => {
         console.log('Win_zone_entry_check');
         winning_moves(remaining_moves, inside_obs);
     }
-    if (current_still > 51 && turn_checker === 'red' && inside_obs.has_entered_wining_line === true)
+    if (current_still > 51 && red_condition && inside_obs.has_entered_wining_line === true)
     {
         console.log('Win_zone_entry_check');
         winning_moves(remaining_moves, inside_obs);
