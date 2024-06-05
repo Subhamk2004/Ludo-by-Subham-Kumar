@@ -7,12 +7,14 @@ let yellow_movers = document.querySelectorAll('.yellow_movers');
 let all_mover = document.querySelectorAll('.mover');
 let current_player_checker = document.querySelector('#current_player');
 
+
+
 let turn_checker = "blue";
 let dice_number = Number(0);
 let rotator = Number(0);
 let dice_turn_checker = Number(1);
 let red_condition = false;
-
+let movers_position_arr = [];
 
 
 let animation_stop;
@@ -43,10 +45,13 @@ let global_object = {
             previous_location_x :40,
             previous_location_y:40,
             id:'blue_mover_1',
+            class:'blue_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'b'
         },
         blue_mover_2:{
@@ -57,10 +62,13 @@ let global_object = {
             previous_location_x :40,
             previous_location_y:40,
             id:'blue_mover_2',
+            class:'blue_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'b'
         },
         blue_mover_3:{
@@ -71,10 +79,13 @@ let global_object = {
             previous_location_x :40,
             previous_location_y:40,
             id:'blue_mover_3',
+            class:'blue_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'b'
         },
         blue_mover_4:{
@@ -85,10 +96,13 @@ let global_object = {
             previous_location_x :40,
             previous_location_y:40,
             id:'blue_mover_4',
+            class:'blue_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'b'
         }
     },
@@ -101,10 +115,13 @@ let global_object = {
             previous_location_x :1,
             previous_location_y:1,
             id:'red_mover_1',
+            class:'red_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'r'
         },
         red_mover_2:{
@@ -115,10 +132,13 @@ let global_object = {
             previous_location_x :1,
             previous_location_y:1,
             id:'red_mover_2',
+            class:'red_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'r'
         },
         red_mover_3:{
@@ -129,10 +149,13 @@ let global_object = {
             previous_location_x :1,
             previous_location_y:1,
             id:'red_mover_3',
+            class:'red_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'r'
         },
         red_mover_4:{
@@ -143,10 +166,13 @@ let global_object = {
             previous_location_x :1,
             previous_location_y:1,
             id:'red_mover_4',
+            class:'red_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'r'
         }
     },
@@ -159,10 +185,13 @@ let global_object = {
             previous_location_x :14,
             previous_location_y:14,
             id:'green_mover_1',
+            class:'green_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'g'
         },
         green_mover_2:{
@@ -173,10 +202,13 @@ let global_object = {
             previous_location_x :14,
             previous_location_y:14,
             id:'green_mover_2',
+            class:'green_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'g'
         },
         green_mover_3:{
@@ -187,10 +219,13 @@ let global_object = {
             previous_location_x :14,
             previous_location_y:14,
             id:'green_mover_3',
+            class:'green_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'g'
         }, green_mover_4:{
             is_opened: false,
@@ -200,10 +235,13 @@ let global_object = {
             previous_location_x :14,
             previous_location_y:14,
             id:'green_mover_4',
+            class:'green_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'g'
         }
     },
@@ -216,10 +254,13 @@ let global_object = {
             previous_location_x :27,
             previous_location_y:27,
             id:'yellow_mover_1',
+            class:'yellow_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'y'
         },
         yellow_mover_2:{
@@ -230,10 +271,13 @@ let global_object = {
             previous_location_x :27,
             previous_location_y:27,
             id:'yellow_mover_2',
+            class:'yellow_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'y'
         },
         yellow_mover_3:{
@@ -244,10 +288,13 @@ let global_object = {
             previous_location_x :27,
             previous_location_y:27,
             id:'yellow_mover_3',
+            class:'yellow_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'y'
         },
         yellow_mover_4:{
@@ -258,14 +305,58 @@ let global_object = {
             previous_location_x :27,
             previous_location_y:27,
             id:'yellow_mover_4',
+            class:'yellow_moverss',
             previous_result_x:0,
             previous_result_y:0,
             has_entered_wining_line: false,
             current_win_pos:0,
+            home_x:0,
+            home_y:0,
             winner:'y'
         }
     }
 }
+
+
+blue_movers.forEach(function (mover) {
+    let mover_ac = mover;
+    let movers_home_x = mover_ac.getBoundingClientRect().left;
+    let movers_home_y = mover_ac.getBoundingClientRect().top;
+    let mover_id = mover_ac.children[0].id;
+    // console.log(movers_home_x, mover_id);
+    global_object.blue_moverss[mover_id].home_x = movers_home_x;
+    global_object.blue_moverss[mover_id].home_y = movers_home_y;
+});
+red_movers.forEach(function (mover) {
+    let mover_ac = mover;
+    let movers_home_x = mover_ac.getBoundingClientRect().left;
+    let movers_home_y = mover_ac.getBoundingClientRect().top;
+    let mover_id = mover_ac.children[0].id;
+    // console.log(movers_home_x, mover_id);
+    global_object.red_moverss[mover_id].home_x = movers_home_x;
+    global_object.red_moverss[mover_id].home_y = movers_home_y;
+});
+green_movers.forEach(function (mover) {
+    let mover_ac = mover;
+    let movers_home_x = mover_ac.getBoundingClientRect().left;
+    let movers_home_y = mover_ac.getBoundingClientRect().top;
+    let mover_id = mover_ac.children[0].id;
+    // console.log(movers_home_x, mover_id);
+    global_object.green_moverss[mover_id].home_x = movers_home_x;
+    global_object.green_moverss[mover_id].home_y = movers_home_y;
+});
+yellow_movers.forEach(function (mover) {
+    let mover_ac = mover;
+    let movers_home_x = mover_ac.getBoundingClientRect().left;
+    let movers_home_y = mover_ac.getBoundingClientRect().top;
+    let mover_id = mover_ac.children[0].id;
+    // console.log(movers_home_x, mover_id);
+    global_object.yellow_moverss[mover_id].home_x = movers_home_x;
+    global_object.yellow_moverss[mover_id].home_y = movers_home_y;
+});
+
+// console.log(global_object.blue_moverss.blue_mover_1.home_x);
+
 
 dice.addEventListener("click", function(){
     rotator = rotator + 360;
@@ -453,7 +544,35 @@ let mover_further = (inside_obs, dice_output) => {
     let previous_pos = inside_obs.previous_location;
     let new_position_id = previous_pos + dice_output;
     let remaining_moves;
+    let array_pos_checker = 0;
     let current_still;
+    let arr_item;
+    let defeated_mover;
+    let defeated_mover_class;
+    movers_position_arr.forEach(function (item, index) {
+        if (inside_obs.id === item[1])
+        {
+            array_pos_checker = 1;
+            item[0] = new_position_id;
+            return 0;
+        }
+        if (new_position_id === item[0] && inside_obs.class !== item[2])
+        {
+            defeated_mover = item[1];
+            defeated_mover_class = item[2];
+            movers_position_arr.splice(index, 1);
+            manage_defeaters(defeated_mover, defeated_mover_class);
+            array_pos_checker = 1;
+        }
+    });
+    if (array_pos_checker === 0)
+    {
+        movers_position_arr.push([new_position_id, inside_obs.id, inside_obs.class]);
+    }
+    else{
+        array_pos_checker = 0;
+    }
+    console.log(movers_position_arr);
     current_still = new_position_id;
     if (inside_obs.has_entered_wining_line === true)
     {
@@ -506,7 +625,6 @@ let mover_further = (inside_obs, dice_output) => {
     mover_actual.style.transform = `translate(${resultant_x}px,${resultant_y}px)`;
     clearInterval(animation_stop);
     dice.disabled = false;
-    console.log('Completed remaining steps');
     if (current_still > inside_obs.start_location-2 && previous_pos<inside_obs.start_location && inside_obs.has_entered_wining_line === true)
     {
         console.log('Win_zone_entry_check');
@@ -518,6 +636,11 @@ let mover_further = (inside_obs, dice_output) => {
         winning_moves(remaining_moves, inside_obs);
     }
 }
+
+
+
+
+
 
 let winning_moves = (winner_moves, inside_obj) => {
     // console.log(winner_moves, inside_obj);
@@ -535,10 +658,10 @@ let winning_moves = (winner_moves, inside_obj) => {
     let next_win_pos_str;
     let win_id;
     let mover_actual = document.getElementById(inside_obj.id);
-    console.log(current_pos);
-    console.log(current_x_pos);
-    console.log(current_y_pos);
-    console.log(winner_moves);
+    // console.log(current_pos);
+    // console.log(current_x_pos);
+    // console.log(current_y_pos);
+    // console.log(winner_moves);
     if (winner_moves + current_pos <= 6)
     {
         next_win_pos = winner_moves + current_pos;
@@ -563,3 +686,38 @@ let winning_moves = (winner_moves, inside_obj) => {
     dice.disabled = false;
     clearInterval(animation_stop);
 }
+
+
+
+let manage_defeaters = (defeated_mover_id, defeated_mover_class) => {
+    let defeated_obj = global_object[defeated_mover_class][defeated_mover_id];
+    let mover_actual = document.getElementById(defeated_obj.id);
+    console.log(mover_actual);
+
+    const homeX = defeated_obj.home_x;
+    const homeY = defeated_obj.home_y;
+    const currentX = mover_actual.offsetLeft;
+    const currentY = mover_actual.offsetTop;
+
+    const translateX = homeX - currentX;
+    const translateY = homeY - currentY;
+
+    mover_actual.style.transition = 'transform 0.5s ease-in-out';
+    mover_actual.style.transform = `translate(${translateX}px, ${translateY}px)`;
+
+    setTimeout(() => {
+        mover_actual.style.transition = '';
+        mover_actual.style.transform = '';
+    }, 500);
+    defeated_obj.is_opened = false;
+    defeated_obj.has_won = false;
+    defeated_obj.previous_location = defeated_obj.start_location;
+    defeated_obj.previous_location_x = defeated_obj.start_location;
+    defeated_obj.previous_location_y = defeated_obj.start_location;
+    defeated_obj.previous_result_x = 0;
+    defeated_obj.previous_result_y = 0;
+    
+
+    console.log('Maybe defeated successfully');
+}
+

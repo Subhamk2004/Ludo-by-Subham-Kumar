@@ -20,7 +20,7 @@ body{
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin-top:-80px;
 }
 .vertically_stacked_containers{
@@ -50,6 +50,7 @@ body{
     border-radius: 200px;
     background-color: white;
     display: flex;
+    /*position: relative;*/
     justify-content: center;
     align-items: center;
 }
@@ -177,11 +178,16 @@ body{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    /*position: relative;*/
     z-index: 1000;
-    transition: all 0.3s ease-in-out;
+    /*transition: all 0.3s ease-in-out;*/
+    /*position: absolute;*/
 }
 .mover_img{
     width: 100%;
+    /*position: absolute;*/
+    /*top: -10px;*/
+    /*left: -1px;*/
     /*z-index: 100000;*/
     transition: all 0.3s ease-in-out;
 }
