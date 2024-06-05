@@ -83,9 +83,11 @@ body{
     flex-direction: row;
 }
 .winning_portion{
-    background: linear-gradient(150deg, red,green,blue,yellow);
+    /*background: linear-gradient(150deg, red,green,blue,yellow);*/
     height:100%;
     width:20%;
+    background-color: rgba(255, 254, 254, 0);
+    /*z-index: -1;*/
 }
 
 #red_player_container{
@@ -164,7 +166,7 @@ body{
 #current_player{
     height: 60px;
     width:60px;
-    background-color: rgb(7, 91, 250);
+    background-color: blue;
     box-shadow: 0 5px 7px #000000;
     border-radius: 50%;
 }
@@ -175,10 +177,12 @@ body{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
 .mover_img{
     width: 100%;
+    /*z-index: 100000;*/
     transition: all 0.3s ease-in-out;
 }
 /* specific locations coloring*/
@@ -197,4 +201,33 @@ body{
 }
 #l40{
     background-color: rgb(7, 91, 250);
+}
+
+.winning_portion{
+    position: relative;
+}
+#winning_container_image{
+    position: absolute;
+    /*z-index: -1;*/
+}
+
+.winners_stop{
+    position: absolute;
+    height:33%;
+    width:35%;
+    /*background-color: white;*/
+}
+#wr6{
+    top: 34%;
+}
+#wy6{
+    top: 34%;
+    right:0;
+}
+#wb6{
+    bottom:0;
+    left:33%;
+}
+#wg6{
+    left:33%;
 }
