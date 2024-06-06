@@ -1143,13 +1143,16 @@ let winning_moves = (winner_moves, inside_obj) => {
                 });
 
                 winner_container.style.display = 'flex';
+                in_game.pause();
+                in_game.loop = false;
+                winning.play();
             }
         }
         if (players === 'all')
         {
             if (winner === 3)
             {
-
+                in_game.pause();
                 winning.play();
 
                 // console.log('checking is it entered or not');
