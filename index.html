@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo by Subham Kumar</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,12 +32,13 @@
                     <img id="red_mover_4" class="mover_img" src="images/red_player.png" alt="mover">
                 </button>
             </div>
+            <p id="red_player_name"></p>
         </div>
 
         <div class="playing_lines">
             <div class="movable_line" id="l11"></div>
             <div class="movable_line" id="l10"></div>
-            <div class="movable_line" id="l9"></div>
+            <div class="movable_line safe" id="l9">X</div>
             <div class="movable_line" id="l8"></div>
             <div class="movable_line" id="l7"></div>
             <div class="movable_line" id="l6"></div>
@@ -53,7 +55,7 @@
 
         <div class="playing_lines">
             <div class="movable_line" id="l13"></div>
-            <div class="movable_line" id="l14"></div>
+            <div class="movable_line safe" id="l14"></div>
             <div class="movable_line" id="l15"></div>
             <div class="movable_line" id="l16"></div>
             <div class="movable_line" id="l17"></div>
@@ -81,6 +83,7 @@
                     <img id="green_mover_4" class="mover_img" src="images/green_player.png" alt="mover">
                 </button>
             </div>
+            <p id="green_player_name"></p>
         </div>
 
     </div>
@@ -89,7 +92,7 @@
         <div class="mid_lines">
             <div class="playing_lines_mid">
                 <div class="movable_line_mid" id="l0"></div>
-                <div class="movable_line_mid" id="l1"></div>
+                <div class="movable_line_mid safe" id="l1"></div>
                 <div class="movable_line_mid" id="l2"></div>
                 <div class="movable_line_mid" id="l3"></div>
                 <div class="movable_line_mid" id="l4"></div>
@@ -106,7 +109,7 @@
             <div class="playing_lines_mid">
                 <div class="movable_line_mid" id="l50"></div>
                 <div class="movable_line_mid" id="l49"></div>
-                <div class="movable_line_mid" id="l48"></div>
+                <div class="movable_line_mid safe" id="l48">X</div>
                 <div class="movable_line_mid" id="l47"></div>
                 <div class="movable_line_mid" id="l46"></div>
                 <div class="movable_line_mid" id="l45"></div>
@@ -126,7 +129,7 @@
                 <div class="movable_line_mid" id="l19"></div>
                 <div class="movable_line_mid" id="l20"></div>
                 <div class="movable_line_mid" id="l21"></div>
-                <div class="movable_line_mid" id="l22"></div>
+                <div class="movable_line_mid safe" id="l22">X</div>
                 <div class="movable_line_mid" id="l23"></div>
                 <div class="movable_line_mid" id="l24"></div>
             </div>
@@ -143,7 +146,7 @@
                 <div class="movable_line_mid" id="l30"></div>
                 <div class="movable_line_mid" id="l29"></div>
                 <div class="movable_line_mid" id="l28"></div>
-                <div class="movable_line_mid" id="l27"></div>
+                <div class="movable_line_mid safe" id="l27"></div>
                 <div class="movable_line_mid" id="l26"></div>
             </div>
         </div>
@@ -171,6 +174,7 @@
                     <img id="blue_mover_4" class="mover_img" src="images/blue_player.png" alt="mover">
                 </button>
             </div>
+            <p id="blue_player_name"></p>
         </div>
 
         <div class="playing_lines">
@@ -178,7 +182,7 @@
             <div class="movable_line" id="l43"></div>
             <div class="movable_line" id="l42"></div>
             <div class="movable_line" id="l41"></div>
-            <div class="movable_line" id="l40"></div>
+            <div class="movable_line safe" id="l40"></div>
             <div class="movable_line" id="l39"></div>
         </div>
         <div class="winning_lines" id="blue_winning_line">
@@ -193,7 +197,7 @@
             <div class="movable_line" id="l32"></div>
             <div class="movable_line" id="l33"></div>
             <div class="movable_line" id="l34"></div>
-            <div class="movable_line" id="l35"></div>
+            <div class="movable_line safe" id="l35">X</div>
             <div class="movable_line" id="l36"></div>
             <div class="movable_line" id="l37"></div>
         </div>
@@ -218,6 +222,7 @@
                     <img id="yellow_mover_4" class="mover_img" src="images/yellow_player.png" alt="mover">
                 </button>
             </div>
+            <p id="yellow_player_name"></p>
         </div>
 
     </div>
@@ -228,6 +233,70 @@
     </button>
     <div id="current_player"></div>
 </div>
+<div class = 'choice'>
+    <p>Select Number of players</p>
+    <button id="pl_choice1" class="player_num_btns">2</button>
+    <button id="pl_choice2" class="player_num_btns">4</button>
+</div>
+<div class="two_pl_choice">
+    <p>Select Choice for two players</p>
+    <button id="choice1"></button>
+    <button id="choice2"></button>
+</div>
+<div class="winner_announcer">
+    <img id="winner_img" src="images/winner.png" alt="winner_img">
+    <p>is</p>
+    <span id="winner_id"></span>
+    <span id="winner_2"></span>
+    <span id="winner_3"></span>
+    <span id="winner_4"></span>
+</div>
+<div id="player_inputs2">
+    <label for="p1">Enter player 1</label>
+    <input type="text" id="p1">
+    <label for="p2">Enter player 2</label>
+    <input type="text" id="p2">
+
+    <button id="sub1" class = "submit">Submit</button>
+</div>
+<div id="player_inputs4">
+    <label for="p41">Enter player 1</label>
+    <input type="text" id="p41">
+    <label for="p42">Enter player 2</label>
+    <input type="text" id="p42">
+    <label for="p43">Enter player 3</label>
+    <input type="text" id="p43">
+    <label for="p44">Enter player 4</label>
+    <input type="text" id="p44">
+    <button id="sub2" class = "submit">Submit</button>
+</div>
+<audio id="still_game" loop>
+    <source src="game_sounds/still_game.ogg" type="audio/ogg">
+</audio>
+<audio id="click">
+    <source src="game_sounds/click.mp3" type="audio/mpeg">
+</audio>
+<audio id="dice_roll">
+    <source src="game_sounds/dice_roll.mp3" type="audio/mpeg">
+</audio>
+<audio id="in_game" loop>
+    <source src="game_sounds/in_game.ogg" type="audio/ogg">
+</audio>
+<audio id="winning">
+    <source src="game_sounds/winning.ogg" type="audio/ogg">
+</audio>
+<audio id="destroyed">
+    <source src="game_sounds/destroyed.mp3" type="audio/mpeg">
+</audio>
+<audio id="mover_in">
+    <source src="game_sounds/mover_in.mp3" type="audio/mpeg">
+</audio>
+<audio id="start">
+    <source src="game_sounds/start.mp3" type="audio/mpeg">
+</audio>
+<audio id="error">
+    <source src="game_sounds/erro.mp3" type="audio/mpeg">
+</audio>
 </body>
 <script src="script.js"></script>
 </html>
