@@ -403,8 +403,8 @@ body{
 @media screen and (max-width:500px)
 {
     #game_container{
-        width: 370px;
-        height:370px;
+        width: 350px;
+        height:350px;
     }
     .yellow_movers{
         width: 16px !important;
