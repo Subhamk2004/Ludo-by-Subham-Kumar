@@ -1153,6 +1153,7 @@ let winning_moves = (winner_moves, inside_obj) => {
             if (winner === 3)
             {
                 in_game.pause();
+                in_game.loop = false;
                 winning.play();
 
                 // console.log('checking is it entered or not');
