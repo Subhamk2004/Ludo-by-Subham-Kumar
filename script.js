@@ -1086,25 +1086,7 @@ let winning_moves = (winner_moves, inside_obj) => {
     // console.log(winner_moves);
     if (winner_moves + current_pos <= 6)
     {
-        if(dice_number !== 6 )
-        {
-            if (turn_checker === 'blue')
-            {
-                turn_checker = 'yellow';
-            }
-            else if (turn_checker === 'red')
-            {
-                turn_checker = 'blue';
-            }
-            else if (turn_checker === 'green')
-            {
-                turn_checker = 'red';
-            }
-            else if (turn_checker === 'yellow')
-            {
-                turn_checker = 'green';
-            }
-        }
+        
         next_win_pos = winner_moves + current_pos;
         inside_obj.current_win_pos = next_win_pos;
         next_win_pos_str = 'w' + inside_obj.winner + String(next_win_pos);
@@ -1202,7 +1184,7 @@ let winning_moves = (winner_moves, inside_obj) => {
         if (players === 'gb' || players === 'ry')
         {
             if (winner === 1)
-                
+
             {
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
