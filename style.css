@@ -24,6 +24,7 @@ body{
     overflow: hidden;
     margin-top:-80px;
     display: none;
+    position: relative;
 }
 .vertically_stacked_containers{
     height:40%;
@@ -185,7 +186,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 10px;
+    /* border: solid 1px black; */
     background: linear-gradient(90deg,green, blue);
     background-clip:text;
     color: transparent;
@@ -211,7 +214,7 @@ body{
     background: linear-gradient(90deg,blue, green 80%);
 }
 #choice2{
-    background: linear-gradient(90deg,red 40%, yellow);
+    background: linear-gradient(90deg,red 20%, yellow);
     margin-bottom: 20px;
 }
 #dice{
@@ -398,8 +401,29 @@ body{
     color: #112c0f;
 }
 
+/* .choice_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center;
+    /* border: solid 1px black; */
+    /* gap: 10px; */
+/* } */
+/* .gb, .ry{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */ 
 
-
+.themes{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
 @media screen and (max-width:500px)
 {
     #game_container{
@@ -408,5 +432,12 @@ body{
     }
     .yellow_movers{
         width: 16px !important;
+    }
+    .movable_line, .movable_line_mid, .mid_lines, .winning_lines, .winning_lines_mid, .movable_line_winning, .movable_line_winning_mid{
+        border: 0.6px solid black;
+    }
+    .safe{
+        font-size: 15px;
+        font-weight: 350;
     }
 }

@@ -1086,6 +1086,25 @@ let winning_moves = (winner_moves, inside_obj) => {
     // console.log(winner_moves);
     if (winner_moves + current_pos <= 6)
     {
+        if(dice_number !== 6 )
+        {
+            if (turn_checker === 'blue')
+            {
+                turn_checker = 'yellow';
+            }
+            else if (turn_checker === 'red')
+            {
+                turn_checker = 'blue';
+            }
+            else if (turn_checker === 'green')
+            {
+                turn_checker = 'red';
+            }
+            else if (turn_checker === 'yellow')
+            {
+                turn_checker = 'green';
+            }
+        }
         next_win_pos = winner_moves + current_pos;
         inside_obj.current_win_pos = next_win_pos;
         next_win_pos_str = 'w' + inside_obj.winner + String(next_win_pos);
@@ -1106,7 +1125,7 @@ let winning_moves = (winner_moves, inside_obj) => {
         inside_obj.has_won = true;
         mover_in.play();
         in_game.pause();
-        setTimeout(function (){
+        let playback = setTimeout(function (){
             in_game.play()
             in_game.loop = true;
         },7000);
@@ -1126,6 +1145,60 @@ let winning_moves = (winner_moves, inside_obj) => {
                 global_object.yellow_moverss.win_position,
                 global_object.green_moverss.win_position,)
         }
+        // if (players === 'all')
+        // {
+        //     if(dice_number !== 6 )
+        //     {
+        //         if (turn_checker === 'blue')
+        //         {
+        //             turn_checker = 'yellow';
+        //         }
+        //         else if (turn_checker === 'red')
+        //         {
+        //             turn_checker = 'blue';
+        //         }
+        //         else if (turn_checker === 'green')
+        //         {
+        //             turn_checker = 'red';
+        //         }
+        //         else if (turn_checker === 'yellow')
+        //         {
+        //             turn_checker = 'green';
+        //         }
+        //     }
+        // }
+        // else if (players === 'gb')
+        // {
+        //     if(dice_number !== 6 )
+        //     {
+        //         console.log('condition checked', turn_checker)
+        //         if (turn_checker === 'blue')
+        //         {
+        //             turn_checker = 'green';
+        //         }
+        //
+        //         else if (turn_checker === 'green')
+        //         {
+        //             turn_checker = 'blue';
+        //         }
+        //     }
+        // }
+        // else if (players === 'ry')
+        // {
+        //     if(dice_number !== 6 )
+        //     {
+        //         console.log('condition checked', turn_checker)
+        //         if (turn_checker === 'red')
+        //         {
+        //             turn_checker = 'yellow';
+        //         }
+        //
+        //         else if (turn_checker === 'yellow')
+        //         {
+        //             turn_checker = 'red';
+        //         }
+        //     }
+        // }
         if (players === 'gb' || players === 'ry')
         {
             if (winner === 1)
@@ -1146,6 +1219,7 @@ let winning_moves = (winner_moves, inside_obj) => {
                 in_game.pause();
                 in_game.loop = false;
                 winning.play();
+                clearTimeout(playback);
             }
         }
         if (players === 'all')
@@ -1219,5 +1293,59 @@ let manage_defeaters = (defeated_mover_id, defeated_mover_class) => {
 
 
     console.log('Maybe defeated successfully');
+    if (players === 'all')
+    {
+        if(dice_number !== 6 )
+        {
+            if (turn_checker === 'blue')
+            {
+                turn_checker = 'yellow';
+            }
+            else if (turn_checker === 'red')
+            {
+                turn_checker = 'blue';
+            }
+            else if (turn_checker === 'green')
+            {
+                turn_checker = 'red';
+            }
+            else if (turn_checker === 'yellow')
+            {
+                turn_checker = 'green';
+            }
+        }
+    }
+    else if (players === 'gb')
+    {
+        if(dice_number !== 6 )
+        {
+            console.log('condition checked', turn_checker)
+            if (turn_checker === 'blue')
+            {
+                turn_checker = 'green';
+            }
+
+            else if (turn_checker === 'green')
+            {
+                turn_checker = 'blue';
+            }
+        }
+    }
+    else if (players === 'ry')
+    {
+        if(dice_number !== 6 )
+        {
+            console.log('condition checked', turn_checker)
+            if (turn_checker === 'red')
+            {
+                turn_checker = 'yellow';
+            }
+
+            else if (turn_checker === 'yellow')
+            {
+                turn_checker = 'red';
+            }
+        }
+    }
 }
 
