@@ -1202,6 +1202,7 @@ let winning_moves = (winner_moves, inside_obj) => {
         if (players === 'gb' || players === 'ry')
         {
             if (winner === 1)
+                
             {
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
