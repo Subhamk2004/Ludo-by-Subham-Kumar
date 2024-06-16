@@ -158,7 +158,7 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    background: linear-gradient(90deg,green, blue);
+    background: linear-gradient(90deg, #035203, blue);
     background-clip:text;
     color: transparent;
     font-weight: 550;
@@ -370,14 +370,14 @@ body{
     margin-bottom: -100px;
     color: red;
 }
-#player_inputs2, #player_inputs4{
+#player_inputs2, #player_inputs4, #player_inputs3{
     display: flex;
     font-size: 20px;
     font-weight: bold;
     flex-direction: column;
     display: none;
 }
-#player_inputs2 input, #player_inputs4 input{
+#player_inputs2 input, #player_inputs4 input, #player_inputs3 input{
     height: 40px;
     border-radius: 15px;
     border: none;
@@ -423,6 +423,54 @@ body{
     position:absolute;
     height: 100%;
     width: 100%;
+}
+.logo_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -10vh;
+}
+.logo_img{
+    width: 60vh;
+    margin-bottom: 2vh;
+}
+.heading{
+    position: absolute;
+    bottom: 20px;
+    color: #dedc28;
+    background-color: #000000;
+    font-style: normal;
+    font-family:sans-serif;
+    padding: 10px;
+    border-radius: 15px;
+}
+.menu-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+.blur_effect {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    opacity: 0.3;
+    /*filter:blur(3px);*/
+    position: absolute;
+    z-index: -2;
+    border-radius: 15px;
+}
+.bg_img{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -3;
 }
 @media screen and (max-width:500px)
 {

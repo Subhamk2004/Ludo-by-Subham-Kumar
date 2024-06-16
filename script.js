@@ -10,6 +10,7 @@ let all_mover = document.querySelectorAll('.mover');
 let current_player_checker = document.querySelector('#current_player');
 let player_num_selector2 = document.getElementById('pl_choice1');
 let player_num_selector4 = document.getElementById('pl_choice2');
+let player_num_selector3 = document.getElementById('pl_choice3');
 let player_num_menu = document.querySelector('.choice');
 let player_mover_menu = document.querySelector('.two_pl_choice');
 let gb = document.querySelector('#choice1');
@@ -22,11 +23,15 @@ let loser =document.querySelector('#winner_4');
 let winner_container = document.querySelector('.winner_announcer');
 let two_players_input_menu = document.getElementById('player_inputs2');
 let four_players_input_menu = document.getElementById('player_inputs4');
+let three_players_input_menu = document.getElementById('player_inputs3');
 let two_players_name1 = document.getElementById('p1');
 let two_players_name2 = document.getElementById('p2');
 let four_players_name3 = document.getElementById('p43');
 let four_players_name4 = document.getElementById('p44');
 let four_players_name1 = document.getElementById('p41');
+let three_players_name3 = document.getElementById('p33');
+let three_players_name2 = document.getElementById('p32');
+let three_players_name1 = document.getElementById('p31');
 let four_players_name2 = document.getElementById('p42');
 let player1;
 let player2;
@@ -34,14 +39,15 @@ let player3;
 let player4;
 let two_player_submit_btn = document.querySelector('#sub1');
 let four_player_submit_btn = document.querySelector('#sub2');
+let three_player_submit_btn = document.querySelector('#sub3');
 let player1_para = document.getElementById('blue_player_name');
 let player2_para = document.getElementById('red_player_name');
 let player3_para = document.getElementById('green_player_name');
 let player4_para = document.getElementById('yellow_player_name');
 
 
-alert('Please select only reasonable pieces, selecting a wrong or non reasonable piece' +
-    'will dismiss your chance');
+// alert('Please select only reasonable pieces, selecting a wrong or non reasonable piece' +
+//     'will dismiss your chance');
 
 
 
@@ -367,6 +373,13 @@ player_num_selector4.addEventListener('click', () => {
     four_players_input_menu.style.display = 'flex';
     players = "all";
 })
+
+player_num_selector3.addEventListener('click', () => {
+    click.play();
+    player_num_menu.style.display = 'none';
+    three_players_input_menu.style.display = 'flex';
+    players = "players3";
+})
 gb.addEventListener('click', () => {
     
     click.play();
@@ -424,6 +437,7 @@ two_player_submit_btn.addEventListener('click', function () {
     }
     game_box.style.display = 'flex';
     dice_menu.style.display = 'flex';
+    document.querySelector('.menu-div').style.display = 'none';
     two_players_input_menu.style.display = 'none';
 });
 four_player_submit_btn.addEventListener('click', function () {
@@ -448,8 +462,34 @@ four_player_submit_btn.addEventListener('click', function () {
     game_box.style.display = 'flex';
     dice_menu.style.display = 'flex';
     four_players_input_menu.style.display = 'none';
+    document.querySelector('.menu-div').style.display = 'none';
 });
 
+three_player_submit_btn.addEventListener('click', function () {
+    click.play();still_game.loop = false;
+    still_game.pause();
+    start.play();
+    document.querySelector('.menu-div').style.display = 'none';
+    setTimeout(function (){
+        in_game.play();
+    },2000)
+    global_object.yellow_moverss = '';
+    yellow_movers.forEach(function (item) {
+        item.style.display = 'none';
+    })
+    player1 = three_players_name1.value;
+    player2 = three_players_name2.value;
+    player3 = three_players_name3.value;
+    player1_para.innerHTML = player1;
+    player2_para.innerHTML = player2;
+    player3_para.innerHTML = player3;
+    global_object.blue_moverss.player_name = player1;
+    global_object.red_moverss.player_name = player2;
+    global_object.green_moverss.player_name = player3;
+    game_box.style.display = 'flex';
+    dice_menu.style.display = 'flex';
+    three_players_input_menu.style.display = 'none';
+});
 
 
 
@@ -804,6 +844,113 @@ let move_mover = (dice_number) => {
                 }
             }
             actual_mover(dice_num, yellow_movers);
+        }
+    }
+
+    else if (players === 'players3')
+    {
+        if (turn_checker === 'blue')
+        {
+            blue_movers.forEach(function (item) {
+                item.disabled = false;
+            });
+            yellow_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            blue_movers.forEach(function (item) {
+                item.style.zIndex = '100000'
+            });
+            red_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            green_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            animation_stop = setInterval(animate_mover, 700, blue_movers);
+            actual_mover(dice_num, blue_movers);
+            current_player_checker.style.backgroundColor = 'blue';
+
+            red_condition = false;
+            if (dice_num !== 6){
+                turn_checker = 'red';
+                // current_player_checker.style.backgroundColor = 'red';
+                let blue_moverss_obj = global_object.blue_moverss;
+                if (blue_moverss_obj.close_count === 4)
+                {
+                    console.log('All closed');
+                    clearInterval(animation_stop);
+                    dice.disabled = false;
+                    return;
+                }
+            }
+        }
+        else if (turn_checker === 'red')
+        {
+            red_movers.forEach(function (item) {
+                item.disabled = false;
+            });
+            yellow_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            blue_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            red_movers.forEach(function (item) {
+                item.style.zIndex = '100000'
+            });
+            green_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            animation_stop = setInterval(animate_mover, 700, red_movers);
+            actual_mover(dice_num, red_movers);
+            current_player_checker.style.backgroundColor = 'red';
+            red_condition = true;
+            if (dice_num !== 6){
+                turn_checker = 'green';
+                // current_player_checker.style.backgroundColor = 'green';
+                let red_moverss_obj = global_object.red_moverss;
+                if (red_moverss_obj.close_count === 4)
+                {
+                    console.log('All closed');
+                    clearInterval(animation_stop);
+                    dice.disabled = false;
+                    return;
+                }
+            }
+        }
+        else if (turn_checker === 'green')
+        {
+            green_movers.forEach(function (item) {
+                item.disabled = false;
+            });
+            yellow_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            blue_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            red_movers.forEach(function (item) {
+                item.style.zIndex = '10000'
+            });
+            green_movers.forEach(function (item) {
+                item.style.zIndex = '100000'
+            });
+            animation_stop = setInterval(animate_mover, 700, green_movers);
+            current_player_checker.style.backgroundColor = 'green';
+            actual_mover(dice_num, green_movers);
+            red_condition = false;
+            if (dice_num !== 6){
+                turn_checker = 'blue';
+                // current_player_checker.style.backgroundColor = 'yellow';
+                let green_moverss_obj = global_object.green_moverss;
+                if (green_moverss_obj.close_count === 4)
+                {
+                    console.log('All closed');
+                    clearInterval(animation_stop);
+                    dice.disabled = false;
+                    return;
+                }
+            }
         }
     }
 
@@ -1203,6 +1350,36 @@ let winning_moves = (winner_moves, inside_obj) => {
                 in_game.loop = false;
                 winning.play();
                 clearTimeout(playback);
+                mover_in.pause();
+            }
+        }
+        if (players === 'players3')
+        {
+            if (winner === 2)
+
+            {
+                // console.log('checking is it entered or not');
+                Object.entries(global_object).forEach(([key, value]) => {
+                    if (global_object[key].win_position === 0)
+                    {
+                        loser.innerHTML = `Loser is ${global_object[key].player_name}`;
+                    }
+                    else if (global_object[key].win_position === 1)
+                    {
+                        winner_1.innerHTML = global_object[key].player_name;
+                    }
+                    else if (global_object[key].win_position === 2)
+                    {
+                        winner_2.innerHTML = global_object[key].player_name;
+                    }
+                });
+
+                winner_container.style.display = 'flex';
+                in_game.pause();
+                in_game.loop = false;
+                winning.play();
+                clearTimeout(playback);
+                mover_in.pause();
             }
         }
         if (players === 'all')

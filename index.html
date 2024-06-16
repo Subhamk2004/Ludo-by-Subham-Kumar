@@ -33,6 +33,8 @@
     <meta name="google-site-verification" content="IPcz7Gz2fR0evQfAUOqGOOysQl2gBUvaP5RFu2G0Bks" />
 </head>
 <body>
+
+
 <div id="game_container">
     <!-- <img class="themes" id="theme1" src="images/theme1_simple.jpg" alt="theme" srcset=""> -->
 
@@ -260,43 +262,70 @@
     </button>
     <div id="current_player"></div>
 </div>
-<div class = 'choice'>
-    <p>Select Number of players</p>
-    <button id="pl_choice1" class="player_num_btns">2</button>
-    <button id="pl_choice2" class="player_num_btns">4</button>
-</div>
-<div class="two_pl_choice">
-    <p>Select Choice for two players</p>
-    <button id="choice1"></button>
-    <button id="choice2"></button>
-</div>
-<div class="winner_announcer">
-    <img id="winner_img" src="images/winner.png" alt="winner_img">
-    <p>is</p>
-    <span id="winner_id"></span>
-    <span id="winner_2"></span>
-    <span id="winner_3"></span>
-    <span id="winner_4"></span>
-</div>
-<div id="player_inputs2">
-    <label for="p1">Enter player 1</label>
-    <input type="text" id="p1">
-    <label for="p2">Enter player 2</label>
-    <input type="text" id="p2">
 
-    <button id="sub1" class = "submit">Play</button>
+
+<img src="images/bg0.png" alt="background" class="bg_img">
+
+
+<div class="menu-div">
+    <div class="logo_box">
+        <img class="logo_img" src="images/logo1.png" alt="logo">
+    </div>
+    <div class="blur_effect"></div>
+    <div class = 'choice'>
+        <p>Select Number of players</p>
+        <button id="pl_choice1" class="player_num_btns">2</button>
+        <button id="pl_choice3" class="player_num_btns">3</button>
+        <button id="pl_choice2" class="player_num_btns">4</button>
+    </div>
+
+    <div class="two_pl_choice">
+        <p>Select Choice for two players</p>
+        <button id="choice1"></button>
+        <button id="choice2"></button>
+    </div>
+    <div class="winner_announcer">
+        <img id="winner_img" src="images/winner.png" alt="winner_img">
+        <p>is</p>
+        <span id="winner_id"></span>
+        <span id="winner_2"></span>
+        <span id="winner_3"></span>
+        <span id="winner_4"></span>
+    </div>
+    <div id="player_inputs2">
+        <label for="p1">Enter player 1</label>
+        <input type="text" id="p1">
+        <label for="p2">Enter player 2</label>
+        <input type="text" id="p2">
+
+        <button id="sub1" class = "submit">Play</button>
+    </div>
+    <div id="player_inputs3">
+        <label for="p31">Enter player 1</label>
+        <input type="text" id="p31">
+        <label for="p32">Enter player 2</label>
+        <input type="text" id="p32">
+        <label for="p33">Enter player 3</label>
+        <input type="text" id="p33">
+
+        <button id="sub3" class = "submit">Play</button>
+    </div>
+    <div id="player_inputs4">
+        <label for="p41">Enter player 1</label>
+        <input type="text" id="p41">
+        <label for="p42">Enter player 2</label>
+        <input type="text" id="p42">
+        <label for="p43">Enter player 3</label>
+        <input type="text" id="p43">
+        <label for="p44">Enter player 4</label>
+        <input type="text" id="p44">
+        <button id="sub2" class = "submit">Play</button>
+    </div>
+    <h4 class="heading">
+        -by SUBHAM KUMAR RAHAR
+    </h4>
 </div>
-<div id="player_inputs4">
-    <label for="p41">Enter player 1</label>
-    <input type="text" id="p41">
-    <label for="p42">Enter player 2</label>
-    <input type="text" id="p42">
-    <label for="p43">Enter player 3</label>
-    <input type="text" id="p43">
-    <label for="p44">Enter player 4</label>
-    <input type="text" id="p44">
-    <button id="sub2" class = "submit">Play</button>
-</div>
+
 <audio id="still_game" loop>
     <source src="game_sounds/still_game.ogg" type="audio/ogg">
 </audio>
@@ -324,6 +353,9 @@
 <audio id="error">
     <source src="game_sounds/erro.mp3" type="audio/mpeg">
 </audio>
+
+
+
 </body>
 <script src="script.js"></script>
 </html>
