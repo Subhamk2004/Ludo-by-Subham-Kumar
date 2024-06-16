@@ -1389,6 +1389,8 @@ let winning_moves = (winner_moves, inside_obj) => {
                 in_game.pause();
                 in_game.loop = false;
                 winning.play();
+                clearTimeout(playback);
+                mover_in.pause();
 
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
