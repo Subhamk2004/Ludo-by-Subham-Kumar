@@ -16,11 +16,11 @@ let player_mover_menu = document.querySelector('.two_pl_choice');
 let gb = document.querySelector('#choice1');
 let ry = document.querySelector('#choice2');
 let winner_1 = document.querySelector('#winner_id');
-let winner_2 =document.querySelector('#winner_2');
-let winner_3 =document.querySelector('#winner_3');
-let loser =document.querySelector('#winner_4');
+let winner_2 = document.querySelector('#winner_2');
+let winner_3 = document.querySelector('#winner_3');
+let loser = document.querySelector('#winner_4');
 
-let winner_container = document.querySelector('.winner_announcer');
+let winner_container = document.querySelector('#winner_announcer');
 let two_players_input_menu = document.getElementById('player_inputs2');
 let four_players_input_menu = document.getElementById('player_inputs4');
 let three_players_input_menu = document.getElementById('player_inputs3');
@@ -44,304 +44,307 @@ let player1_para = document.getElementById('blue_player_name');
 let player2_para = document.getElementById('red_player_name');
 let player3_para = document.getElementById('green_player_name');
 let player4_para = document.getElementById('yellow_player_name');
+let winner_video = document.querySelector('.win_vid');
+let start_ludo = document.getElementById('start_ludo');
+winner_video.loop = true;
+winner_video.pause();
 
 
 // alert('Please select only reasonable pieces, selecting a wrong or non reasonable piece' +
 //     'will dismiss your chance');
 
 
-
 let global_object = {
-    blue_moverss : {
-        blue_mover_1:{
+    blue_moverss: {
+        blue_mover_1: {
             is_opened: false,
             has_won: false,
-            start_location:40,
-            previous_location:40,
-            previous_location_x :40,
-            previous_location_y:40,
-            id:'blue_mover_1',
-            class:'blue_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 40,
+            previous_location: 40,
+            previous_location_x: 40,
+            previous_location_y: 40,
+            id: 'blue_mover_1',
+            class: 'blue_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'b'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'b'
         },
-        blue_mover_2:{
+        blue_mover_2: {
             is_opened: false,
             has_won: false,
-            start_location:40,
-            previous_location:40,
-            previous_location_x :40,
-            previous_location_y:40,
-            id:'blue_mover_2',
-            class:'blue_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 40,
+            previous_location: 40,
+            previous_location_x: 40,
+            previous_location_y: 40,
+            id: 'blue_mover_2',
+            class: 'blue_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'b'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'b'
         },
-        blue_mover_3:{
+        blue_mover_3: {
             is_opened: false,
             has_won: false,
-            start_location:40,
-            previous_location:40,
-            previous_location_x :40,
-            previous_location_y:40,
-            id:'blue_mover_3',
-            class:'blue_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 40,
+            previous_location: 40,
+            previous_location_x: 40,
+            previous_location_y: 40,
+            id: 'blue_mover_3',
+            class: 'blue_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'b'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'b'
         },
-        blue_mover_4:{
+        blue_mover_4: {
             is_opened: false,
             has_won: false,
-            start_location:40,
-            previous_location:40,
-            previous_location_x :40,
-            previous_location_y:40,
-            id:'blue_mover_4',
-            class:'blue_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 40,
+            previous_location: 40,
+            previous_location_x: 40,
+            previous_location_y: 40,
+            id: 'blue_mover_4',
+            class: 'blue_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'b'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'b'
         },
-        close_count:4,
-        win_count:0,
-        win_position:0
+        close_count: 4,
+        win_count: 0,
+        win_position: 0
     },
-    red_moverss : {
-        red_mover_1:{
+    red_moverss: {
+        red_mover_1: {
             is_opened: false,
             has_won: false,
-            start_location:1,
-            previous_location:1,
-            previous_location_x :1,
-            previous_location_y:1,
-            id:'red_mover_1',
-            class:'red_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 1,
+            previous_location: 1,
+            previous_location_x: 1,
+            previous_location_y: 1,
+            id: 'red_mover_1',
+            class: 'red_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'r'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'r'
         },
-        red_mover_2:{
+        red_mover_2: {
             is_opened: false,
             has_won: false,
-            start_location:1,
-            previous_location:1,
-            previous_location_x :1,
-            previous_location_y:1,
-            id:'red_mover_2',
-            class:'red_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 1,
+            previous_location: 1,
+            previous_location_x: 1,
+            previous_location_y: 1,
+            id: 'red_mover_2',
+            class: 'red_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'r'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'r'
         },
-        red_mover_3:{
+        red_mover_3: {
             is_opened: false,
             has_won: false,
-            start_location:1,
-            previous_location:1,
-            previous_location_x :1,
-            previous_location_y:1,
-            id:'red_mover_3',
-            class:'red_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 1,
+            previous_location: 1,
+            previous_location_x: 1,
+            previous_location_y: 1,
+            id: 'red_mover_3',
+            class: 'red_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'r'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'r'
         },
-        red_mover_4:{
+        red_mover_4: {
             is_opened: false,
             has_won: false,
-            start_location:1,
-            previous_location:1,
-            previous_location_x :1,
-            previous_location_y:1,
-            id:'red_mover_4',
-            class:'red_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 1,
+            previous_location: 1,
+            previous_location_x: 1,
+            previous_location_y: 1,
+            id: 'red_mover_4',
+            class: 'red_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'r'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'r'
         },
-        close_count:4,
-        win_count:0,
-        win_position:0
+        close_count: 4,
+        win_count: 0,
+        win_position: 0
     },
-    green_moverss : {
-        green_mover_1:{
+    green_moverss: {
+        green_mover_1: {
             is_opened: false,
             has_won: false,
-            start_location:14,
-            previous_location:14,
-            previous_location_x :14,
-            previous_location_y:14,
-            id:'green_mover_1',
-            class:'green_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 14,
+            previous_location: 14,
+            previous_location_x: 14,
+            previous_location_y: 14,
+            id: 'green_mover_1',
+            class: 'green_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'g'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'g'
         },
-        green_mover_2:{
+        green_mover_2: {
             is_opened: false,
             has_won: false,
-            start_location:14,
-            previous_location:14,
-            previous_location_x :14,
-            previous_location_y:14,
-            id:'green_mover_2',
-            class:'green_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 14,
+            previous_location: 14,
+            previous_location_x: 14,
+            previous_location_y: 14,
+            id: 'green_mover_2',
+            class: 'green_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'g'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'g'
         },
-        green_mover_3:{
+        green_mover_3: {
             is_opened: false,
             has_won: false,
-            start_location:14,
-            previous_location:14,
-            previous_location_x :14,
-            previous_location_y:14,
-            id:'green_mover_3',
-            class:'green_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 14,
+            previous_location: 14,
+            previous_location_x: 14,
+            previous_location_y: 14,
+            id: 'green_mover_3',
+            class: 'green_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'g'
-        }, green_mover_4:{
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'g'
+        }, green_mover_4: {
             is_opened: false,
             has_won: false,
-            start_location:14,
-            previous_location:14,
-            previous_location_x :14,
-            previous_location_y:14,
-            id:'green_mover_4',
-            class:'green_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 14,
+            previous_location: 14,
+            previous_location_x: 14,
+            previous_location_y: 14,
+            id: 'green_mover_4',
+            class: 'green_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'g'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'g'
         },
-        close_count:4,
-        win_count:0,
-        win_position:0
+        close_count: 4,
+        win_count: 0,
+        win_position: 0
     },
-    yellow_moverss : {
-        yellow_mover_1:{
+    yellow_moverss: {
+        yellow_mover_1: {
             is_opened: false,
             has_won: false,
-            start_location:27,
-            previous_location:27,
-            previous_location_x :27,
-            previous_location_y:27,
-            id:'yellow_mover_1',
-            class:'yellow_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 27,
+            previous_location: 27,
+            previous_location_x: 27,
+            previous_location_y: 27,
+            id: 'yellow_mover_1',
+            class: 'yellow_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'y'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'y'
         },
-        yellow_mover_2:{
+        yellow_mover_2: {
             is_opened: false,
             has_won: false,
-            start_location:27,
-            previous_location:27,
-            previous_location_x :27,
-            previous_location_y:27,
-            id:'yellow_mover_2',
-            class:'yellow_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 27,
+            previous_location: 27,
+            previous_location_x: 27,
+            previous_location_y: 27,
+            id: 'yellow_mover_2',
+            class: 'yellow_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'y'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'y'
         },
-        yellow_mover_3:{
+        yellow_mover_3: {
             is_opened: false,
             has_won: false,
-            start_location:27,
-            previous_location:27,
-            previous_location_x :27,
-            previous_location_y:27,
-            id:'yellow_mover_3',
-            class:'yellow_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 27,
+            previous_location: 27,
+            previous_location_x: 27,
+            previous_location_y: 27,
+            id: 'yellow_mover_3',
+            class: 'yellow_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'y'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'y'
         },
-        yellow_mover_4:{
+        yellow_mover_4: {
             is_opened: false,
             has_won: false,
-            start_location:27,
-            previous_location:27,
-            previous_location_x :27,
-            previous_location_y:27,
-            id:'yellow_mover_4',
-            class:'yellow_moverss',
-            previous_result_x:0,
-            previous_result_y:0,
+            start_location: 27,
+            previous_location: 27,
+            previous_location_x: 27,
+            previous_location_y: 27,
+            id: 'yellow_mover_4',
+            class: 'yellow_moverss',
+            previous_result_x: 0,
+            previous_result_y: 0,
             has_entered_wining_line: false,
-            current_win_pos:0,
-            home_x:0,
-            home_y:0,
-            winner:'y'
+            current_win_pos: 0,
+            home_x: 0,
+            home_y: 0,
+            winner: 'y'
         },
-        close_count:4,
-        win_count:0,
-        win_position:0
+        close_count: 4,
+        win_count: 0,
+        win_position: 0
     }
 }
 
@@ -360,7 +363,11 @@ let still_game = document.getElementById('still_game');
 let click = document.getElementById('click');
 still_game.volume = 0.6;
 in_game.volume = 0.5;
-still_game.play();
+start_ludo.addEventListener('click', function () {
+    still_game.play();
+    document.querySelector('.enter').style.display = 'none';
+})
+
 
 player_num_selector2.addEventListener('click', () => {
     click.play();
@@ -381,7 +388,7 @@ player_num_selector3.addEventListener('click', () => {
     players = "players3";
 })
 gb.addEventListener('click', () => {
-    
+
     click.play();
     player_mover_menu.style.display = 'none';
     two_players_input_menu.style.display = 'flex';
@@ -413,23 +420,21 @@ ry.addEventListener('click', () => {
 });
 
 two_player_submit_btn.addEventListener('click', function () {
-    click.play();still_game.loop = false;
+    click.play(); still_game.loop = false;
     still_game.pause();
     start.play();
-    setTimeout(function (){
+    setTimeout(function () {
         in_game.play();
-    },2000);
+    }, 2000);
     player1 = two_players_name1.value;
     player2 = two_players_name2.value;
-    if (players === 'gb')
-    {
+    if (players === 'gb') {
         global_object.blue_moverss.player_name = player1;
         global_object.green_moverss.player_name = player2;
         player1_para.innerHTML = player1;
         player3_para.innerHTML = player2;
     }
-    else if (players === 'ry')
-    {
+    else if (players === 'ry') {
         global_object.red_moverss.player_name = player1;
         global_object.yellow_moverss.player_name = player2;
         player2_para.innerHTML = player1;
@@ -441,12 +446,12 @@ two_player_submit_btn.addEventListener('click', function () {
     two_players_input_menu.style.display = 'none';
 });
 four_player_submit_btn.addEventListener('click', function () {
-    click.play();still_game.loop = false;
+    click.play(); still_game.loop = false;
     still_game.pause();
     start.play();
-    setTimeout(function (){
+    setTimeout(function () {
         in_game.play();
-    },2000);
+    }, 2000);
     player1 = four_players_name1.value;
     player2 = four_players_name2.value;
     player3 = four_players_name3.value;
@@ -466,13 +471,13 @@ four_player_submit_btn.addEventListener('click', function () {
 });
 
 three_player_submit_btn.addEventListener('click', function () {
-    click.play();still_game.loop = false;
+    click.play(); still_game.loop = false;
     still_game.pause();
     start.play();
     document.querySelector('.menu-div').style.display = 'none';
-    setTimeout(function (){
+    setTimeout(function () {
         in_game.play();
-    },2000)
+    }, 2000)
     global_object.yellow_moverss = '';
     yellow_movers.forEach(function (item) {
         item.style.display = 'none';
@@ -502,14 +507,14 @@ let movers_position_arr = [];
 
 let animation_stop;
 let animate_mover = (mover_animate) => {
-    setTimeout(function (){
-        mover_animate.forEach(function (item){
+    setTimeout(function () {
+        mover_animate.forEach(function (item) {
             item.style.width = `30%`;
             item.style.transform = `translate(0px, 5px)`;
         })
     }, 350)
-    setTimeout(function (){
-        mover_animate.forEach(function (item){
+    setTimeout(function () {
+        mover_animate.forEach(function (item) {
             item.style.width = `25%`;
             item.style.transform = `translate(0px, 0px)`;
         })
@@ -557,20 +562,22 @@ yellow_movers.forEach(function (mover) {
 // console.log(global_object.blue_moverss.blue_mover_1.home_x);
 
 
-dice.addEventListener("click", function(){
+dice.addEventListener("click", function () {
     dice_roll.play();
     rotator = rotator + 360;
     dice.style.transform = `rotate(${rotator}deg)`;
     dice.style.width = `80px`;
     dice.style.height = `80px`
-    setTimeout(function (){
+    setTimeout(function () {
         dice.style.width = `60px`;
         dice.style.height = `60px`;
     }, 300);
     dice.style.boxShadow = `0 10px 10px black`;
     dice_number = Math.floor(Math.random() * 6) + 1;
     dice_value.innerHTML = dice_number;
+    console.log('dice rolled');
     dice.disabled = true;
+    console.log(winner_container)
     move_mover(dice_number);
 });
 
@@ -579,10 +586,8 @@ let move_mover = (dice_number) => {
     all_mover.forEach(function (item) {
         item.disabled = true;
     });
-    if (players === 'gb')
-    {
-        if (turn_checker === 'blue')
-        {
+    if (players === 'gb') {
+        if (turn_checker === 'blue') {
             blue_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -598,12 +603,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'blue';
 
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'green';
                 // current_player_checker.style.backgroundColor = 'red';
                 let blue_moverss_obj = global_object.blue_moverss;
-                if (blue_moverss_obj.close_count === 4)
-                {
+                if (blue_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -611,8 +615,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'green')
-        {
+        else if (turn_checker === 'green') {
             green_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -627,12 +630,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'green';
             actual_mover(dice_num, green_movers);
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'blue';
                 // current_player_checker.style.backgroundColor = 'yellow';
                 let green_moverss_obj = global_object.green_moverss;
-                if (green_moverss_obj.close_count === 4)
-                {
+                if (green_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -641,10 +643,8 @@ let move_mover = (dice_number) => {
             }
         }
     }
-    else if (players === 'ry')
-    {
-        if (turn_checker === 'red')
-        {
+    else if (players === 'ry') {
+        if (turn_checker === 'red') {
             red_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -660,12 +660,11 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, red_movers);
             current_player_checker.style.backgroundColor = 'red';
             red_condition = true;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'yellow';
                 // current_player_checker.style.backgroundColor = 'green';
                 let red_moverss_obj = global_object.red_moverss;
-                if (red_moverss_obj.close_count === 4)
-                {
+                if (red_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -674,8 +673,7 @@ let move_mover = (dice_number) => {
             }
         }
 
-        else if (turn_checker === 'yellow')
-        {
+        else if (turn_checker === 'yellow') {
             yellow_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -690,12 +688,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'yellow';
             animation_stop = setInterval(animate_mover, 700, yellow_movers);
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'red';
                 // current_player_checker.style.backgroundColor = 'blue';
                 let yellow_moverss_obj = global_object.yellow_moverss;
-                if (yellow_moverss_obj.close_count === 4)
-                {
+                if (yellow_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -705,10 +702,8 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, yellow_movers);
         }
     }
-    else if (players === 'all')
-    {
-        if (turn_checker === 'blue')
-        {
+    else if (players === 'all') {
+        if (turn_checker === 'blue') {
             blue_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -730,12 +725,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'blue';
 
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'red';
                 // current_player_checker.style.backgroundColor = 'red';
                 let blue_moverss_obj = global_object.blue_moverss;
-                if (blue_moverss_obj.close_count === 4)
-                {
+                if (blue_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -743,8 +737,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'red')
-        {
+        else if (turn_checker === 'red') {
             red_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -764,12 +757,11 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, red_movers);
             current_player_checker.style.backgroundColor = 'red';
             red_condition = true;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'green';
                 // current_player_checker.style.backgroundColor = 'green';
                 let red_moverss_obj = global_object.red_moverss;
-                if (red_moverss_obj.close_count === 4)
-                {
+                if (red_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -777,8 +769,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'green')
-        {
+        else if (turn_checker === 'green') {
             green_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -798,12 +789,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'green';
             actual_mover(dice_num, green_movers);
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'yellow';
                 // current_player_checker.style.backgroundColor = 'yellow';
                 let green_moverss_obj = global_object.green_moverss;
-                if (green_moverss_obj.close_count === 4)
-                {
+                if (green_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -811,8 +801,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'yellow')
-        {
+        else if (turn_checker === 'yellow') {
             yellow_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -831,12 +820,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'yellow';
             animation_stop = setInterval(animate_mover, 700, yellow_movers);
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'blue';
                 // current_player_checker.style.backgroundColor = 'blue';
                 let yellow_moverss_obj = global_object.yellow_moverss;
-                if (yellow_moverss_obj.close_count === 4)
-                {
+                if (yellow_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -847,10 +835,8 @@ let move_mover = (dice_number) => {
         }
     }
 
-    else if (players === 'players3')
-    {
-        if (turn_checker === 'blue')
-        {
+    else if (players === 'players3') {
+        if (turn_checker === 'blue') {
             blue_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -871,12 +857,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'blue';
 
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'red';
                 // current_player_checker.style.backgroundColor = 'red';
                 let blue_moverss_obj = global_object.blue_moverss;
-                if (blue_moverss_obj.close_count === 4)
-                {
+                if (blue_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -884,8 +869,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'red')
-        {
+        else if (turn_checker === 'red') {
             red_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -905,12 +889,11 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, red_movers);
             current_player_checker.style.backgroundColor = 'red';
             red_condition = true;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'green';
                 // current_player_checker.style.backgroundColor = 'green';
                 let red_moverss_obj = global_object.red_moverss;
-                if (red_moverss_obj.close_count === 4)
-                {
+                if (red_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -918,8 +901,7 @@ let move_mover = (dice_number) => {
                 }
             }
         }
-        else if (turn_checker === 'green')
-        {
+        else if (turn_checker === 'green') {
             green_movers.forEach(function (item) {
                 item.disabled = false;
             });
@@ -939,12 +921,11 @@ let move_mover = (dice_number) => {
             current_player_checker.style.backgroundColor = 'green';
             actual_mover(dice_num, green_movers);
             red_condition = false;
-            if (dice_num !== 6){
+            if (dice_num !== 6) {
                 turn_checker = 'blue';
                 // current_player_checker.style.backgroundColor = 'yellow';
                 let green_moverss_obj = global_object.green_moverss;
-                if (green_moverss_obj.close_count === 4)
-                {
+                if (green_moverss_obj.close_count === 4) {
                     console.log('All closed');
                     clearInterval(animation_stop);
                     dice.disabled = false;
@@ -961,7 +942,7 @@ let move_mover = (dice_number) => {
 
 
 let correct_mover_checker = true;
-let dice_numm ;
+let dice_numm;
 let moverrss;
 
 let actual_mover = (dice_number, mover) => {
@@ -976,14 +957,12 @@ let actual_mover = (dice_number, mover) => {
     let listener = (e) => {
         let main_mover = e.target.id;
         let inside_obs = global_object[actual_object][main_mover];
-        if (inside_obs.is_opened === false && dice_number === 6)
-        {
+        if (inside_obs.is_opened === false && dice_number === 6) {
             click.play();
             remove_all_listeners(mover, listener);
             mover_opener(mover, main_mover, dice_number, mover[1].classList[1], inside_obs.start_location);
         }
-        else if (global_object[actual_object][main_mover].is_opened === true && inside_obs.has_won === false)
-        {
+        else if (global_object[actual_object][main_mover].is_opened === true && inside_obs.has_won === false) {
             click.play();
             remove_all_listeners(mover, listener);
             mover_further(inside_obs, dice_number);
@@ -997,8 +976,7 @@ let actual_mover = (dice_number, mover) => {
             remove_all_listeners(mover, listener);
             dice.disabled = false;
         }
-        else if (inside_obs.is_opened === false && dice_number !== 6)
-        {
+        else if (inside_obs.is_opened === false && dice_number !== 6) {
             clearInterval(animation_stop);
             error.play();
             remove_all_listeners(mover, listener);
@@ -1052,10 +1030,10 @@ let mover_opener = (mover, main_mover, dice_value, mover_object, starting) => {
     let num_starting = 'l' + String(starting);
     let starting_point = document.getElementById(num_starting);
     let main_movers = document.getElementById(main_mover);
-    let x_locator= starting_point.getBoundingClientRect().left;
-    let y_locator= starting_point.getBoundingClientRect().top;
-    let mover_x_locator= main_movers.getBoundingClientRect().left;
-    let mover_y_locator= main_movers.getBoundingClientRect().top;
+    let x_locator = starting_point.getBoundingClientRect().left;
+    let y_locator = starting_point.getBoundingClientRect().top;
+    let mover_x_locator = main_movers.getBoundingClientRect().left;
+    let mover_y_locator = main_movers.getBoundingClientRect().top;
     let resultant_x = x_locator - mover_x_locator + 8;
     let resultant_y = y_locator - mover_y_locator + 2;
     global_object[movers_object].close_count--;
@@ -1098,30 +1076,26 @@ let mover_further = (inside_obs, dice_output) => {
 
 
     current_still = new_position_id;
-    if (inside_obs.has_entered_wining_line === true)
-    {
+    if (inside_obs.has_entered_wining_line === true) {
         winning_moves(dice_output, inside_obs);
         return;
     }
 
-    if (new_position_id > 51)
-    {
-        if (!red_condition)
-        {
+    if (new_position_id > 51) {
+        if (!red_condition) {
             new_position_id = new_position_id - 52;
         }
-        else{
+        else {
             remaining_moves = new_position_id;
             new_position_id = 51;
             remaining_moves = remaining_moves - new_position_id;
             inside_obs.has_entered_wining_line = true;
         }
     }
-    if (new_position_id > inside_obs.start_location-2 && previous_pos<inside_obs.start_location && inside_obs.has_entered_wining_line === false)
-    {
+    if (new_position_id > inside_obs.start_location - 2 && previous_pos < inside_obs.start_location && inside_obs.has_entered_wining_line === false) {
         console.log('entered stage before win');
         remaining_moves = new_position_id;
-        new_position_id = inside_obs.start_location-2
+        new_position_id = inside_obs.start_location - 2
         remaining_moves = remaining_moves - new_position_id;
         inside_obs.has_entered_wining_line = true;
     }
@@ -1130,28 +1104,24 @@ let mover_further = (inside_obs, dice_output) => {
     console.log(safe_point);
 
     movers_position_arr.forEach(function (item, index) {
-        if (inside_obs.has_entered_wining_line === true && inside_obs.id === item[1])
-        {
+        if (inside_obs.has_entered_wining_line === true && inside_obs.id === item[1]) {
             let spliced = movers_position_arr.splice(index, 1);
             console.log(spliced);
             array_pos_checker = 1;
             return 0;
         }
-        if (inside_obs.id === item[1])
-        {
+        if (inside_obs.id === item[1]) {
             console.log('same mover checking and position update to new position');
             array_pos_checker = 1;
             item[0] = new_position_id;
             // return 0;
         }
-        if (new_position_id === item[0] && safe_point.classList[1] === 'safe')
-        {
+        if (new_position_id === item[0] && safe_point.classList[1] === 'safe') {
             console.log('checking if it is a safe position or not, and it is safe position')
             array_pos_checker = 1;
             // return 0;
         }
-        else if (new_position_id === item[0] && inside_obs.class !== item[2])
-        {
+        else if (new_position_id === item[0] && inside_obs.class !== item[2]) {
             defeated_mover = item[1];
             defeated_mover_class = item[2];
             let spliced = movers_position_arr.splice(index, 1);
@@ -1161,11 +1131,10 @@ let mover_further = (inside_obs, dice_output) => {
         }
     });
 
-    if (array_pos_checker === 0)
-    {
+    if (array_pos_checker === 0) {
         movers_position_arr.push([new_position_id, inside_obs.id, inside_obs.class]);
     }
-    else{
+    else {
         array_pos_checker = 0;
     }
     console.log(movers_position_arr);
@@ -1176,8 +1145,8 @@ let mover_further = (inside_obs, dice_output) => {
 
     let num_next = 'l' + String(new_position_id);
     let next_point = document.getElementById(num_next);
-    let new_x_locator= next_point.getBoundingClientRect().left;
-    let new_y_locator= next_point.getBoundingClientRect().top;
+    let new_x_locator = next_point.getBoundingClientRect().left;
+    let new_y_locator = next_point.getBoundingClientRect().top;
     // console.log(next_point);
     let previous_result_x = inside_obs.previous_result_x;
     let previous_result_y = inside_obs.previous_result_y;
@@ -1194,20 +1163,15 @@ let mover_further = (inside_obs, dice_output) => {
     mover_actual.style.transform = `translate(${resultant_x}px,${resultant_y}px)`;
     clearInterval(animation_stop);
     dice.disabled = false;
-    if (current_still > inside_obs.start_location-2 && previous_pos<inside_obs.start_location && inside_obs.has_entered_wining_line === true)
-    {
+    if (current_still > inside_obs.start_location - 2 && previous_pos < inside_obs.start_location && inside_obs.has_entered_wining_line === true) {
         console.log('Win_zone_entry_check');
         winning_moves(remaining_moves, inside_obs);
     }
-    if (current_still > 51 && red_condition && inside_obs.has_entered_wining_line === true)
-    {
+    if (current_still > 51 && red_condition && inside_obs.has_entered_wining_line === true) {
         console.log('Win_zone_entry_check');
         winning_moves(remaining_moves, inside_obs);
     }
 }
-
-
-
 
 
 
@@ -1231,9 +1195,8 @@ let winning_moves = (winner_moves, inside_obj) => {
     // console.log(current_x_pos);
     // console.log(current_y_pos);
     // console.log(winner_moves);
-    if (winner_moves + current_pos <= 6)
-    {
-        
+    if (winner_moves + current_pos <= 6) {
+
         next_win_pos = winner_moves + current_pos;
         inside_obj.current_win_pos = next_win_pos;
         next_win_pos_str = 'w' + inside_obj.winner + String(next_win_pos);
@@ -1244,175 +1207,168 @@ let winning_moves = (winner_moves, inside_obj) => {
         result_y = next_y_pos - current_y_pos + previous_result_y;
         mover_actual.style.transform = `translate(${result_x}px,${result_y}px)`;
     }
-    else{
+    else {
         dice.disabled = false;
         clearInterval(animation_stop);
         return;
     }
-    if (next_win_pos === 6)
-    {
+    if (next_win_pos === 6) {
+
+        if (players === 'all') {
+            if (dice_number !== 6) {
+                if (turn_checker === 'blue') {
+                    turn_checker = 'yellow';
+                }
+                else if (turn_checker === 'red') {
+                    turn_checker = 'blue';
+                }
+                else if (turn_checker === 'green') {
+                    turn_checker = 'red';
+                }
+                else if (turn_checker === 'yellow') {
+                    turn_checker = 'green';
+                }
+            }
+        }
+        else if (players === 'gb') {
+            if (dice_number !== 6) {
+                console.log('condition checked', turn_checker)
+                if (turn_checker === 'blue') {
+                    turn_checker = 'green';
+                }
+
+                else if (turn_checker === 'green') {
+                    turn_checker = 'blue';
+                }
+            }
+        }
+        else if (players === 'ry') {
+            if (dice_number !== 6) {
+                console.log('condition checked', turn_checker)
+                if (turn_checker === 'red') {
+                    turn_checker = 'yellow';
+                }
+
+                else if (turn_checker === 'yellow') {
+                    turn_checker = 'red';
+                }
+            }
+        }
+        else if (players === 'players3') {
+            if (dice_number !== 6) {
+                if (turn_checker === 'blue') {
+                    turn_checker = 'green';
+                }
+                else if (turn_checker === 'red') {
+                    turn_checker = 'blue';
+                }
+                else if (turn_checker === 'green') {
+                    turn_checker = 'red';
+                }
+            }
+        }
+
         inside_obj.has_won = true;
         mover_in.play();
         in_game.pause();
-        let playback = setTimeout(function (){
+        let playback = setTimeout(function () {
             in_game.play()
             in_game.loop = true;
-        },7000);
+        }, 2000);
         let classes = inside_obj.class;
         global_object[classes].win_count++;
         console.log('semi_winner');
-        if (global_object[classes].win_count === 4)
-        {
+        if (global_object[classes].win_count === 4) {
             winner++;
             console.log('new winner');
             global_object[classes].win_position = winner;
         }
-        if (winner === 4)
-        {
+        if (winner === 4) {
             console.log(global_object.blue_moverss.win_position,
                 global_object.red_moverss.win_position,
                 global_object.yellow_moverss.win_position,
                 global_object.green_moverss.win_position,)
         }
-        // if (players === 'all')
-        // {
-        //     if(dice_number !== 6 )
-        //     {
-        //         if (turn_checker === 'blue')
-        //         {
-        //             turn_checker = 'yellow';
-        //         }
-        //         else if (turn_checker === 'red')
-        //         {
-        //             turn_checker = 'blue';
-        //         }
-        //         else if (turn_checker === 'green')
-        //         {
-        //             turn_checker = 'red';
-        //         }
-        //         else if (turn_checker === 'yellow')
-        //         {
-        //             turn_checker = 'green';
-        //         }
-        //     }
-        // }
-        // else if (players === 'gb')
-        // {
-        //     if(dice_number !== 6 )
-        //     {
-        //         console.log('condition checked', turn_checker)
-        //         if (turn_checker === 'blue')
-        //         {
-        //             turn_checker = 'green';
-        //         }
-        //
-        //         else if (turn_checker === 'green')
-        //         {
-        //             turn_checker = 'blue';
-        //         }
-        //     }
-        // }
-        // else if (players === 'ry')
-        // {
-        //     if(dice_number !== 6 )
-        //     {
-        //         console.log('condition checked', turn_checker)
-        //         if (turn_checker === 'red')
-        //         {
-        //             turn_checker = 'yellow';
-        //         }
-        //
-        //         else if (turn_checker === 'yellow')
-        //         {
-        //             turn_checker = 'red';
-        //         }
-        //     }
-        // }
-        if (players === 'gb' || players === 'ry')
-        {
-            if (winner === 1)
 
-            {
+        if (players === 'gb' || players === 'ry') {
+            
+            if (winner === 1) {
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
-                    if (global_object[key].win_position === 0)
-                    {
+                    if (global_object[key].win_position === 0) {
                         loser.innerHTML = `Loser is ${global_object[key].player_name}`;
                     }
-                    else if (global_object[key].win_position === 1)
-                    {
+                    else if (global_object[key].win_position === 1) {
                         winner_1.innerHTML = global_object[key].player_name;
                     }
                 });
 
-                winner_container.style.display = 'flex';
                 in_game.pause();
                 in_game.loop = false;
                 winning.play();
+                winner_video.play();
+                winning.loop = true;
                 clearTimeout(playback);
                 mover_in.pause();
+                dice.disabled = true;
+                winner_container.style.visibility = 'visible';
+                // winner_container.style.display = 'flex';
             }
         }
-        if (players === 'players3')
-        {
-            if (winner === 2)
-
-            {
+        if (players === 'players3') {
+            if (winner === 2) {
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
-                    if (global_object[key].win_position === 0)
-                    {
+                    if (global_object[key].win_position === 0) {
                         loser.innerHTML = `Loser is ${global_object[key].player_name}`;
                     }
-                    else if (global_object[key].win_position === 1)
-                    {
+                    else if (global_object[key].win_position === 1) {
                         winner_1.innerHTML = global_object[key].player_name;
                     }
-                    else if (global_object[key].win_position === 2)
-                    {
+                    else if (global_object[key].win_position === 2) {
                         winner_2.innerHTML = global_object[key].player_name;
                     }
                 });
 
-                winner_container.style.display = 'flex';
+                winner_container.style.visibility = 'visible';
                 in_game.pause();
                 in_game.loop = false;
                 winning.play();
+                winning.loop = true;
+                winner_video.play();
                 clearTimeout(playback);
                 mover_in.pause();
+                dice.disabled = true;
             }
         }
-        if (players === 'all')
-        {
-            if (winner === 3)
-            {
+        if (players === 'all') {
+            if (winner === 3) {
                 in_game.pause();
                 in_game.loop = false;
                 winning.play();
+                winner_video.play();
+                winning.loop = true;
                 clearTimeout(playback);
                 mover_in.pause();
+                dice.disabled = true;
 
                 // console.log('checking is it entered or not');
                 Object.entries(global_object).forEach(([key, value]) => {
-                    if (global_object[key].win_position === 0)
-                    {
+                    if (global_object[key].win_position === 0) {
                         loser.innerHTML = `Loser is ${global_object[key].player_name}`;
                     }
-                    else if (global_object[key].win_position === 1)
-                    {
+                    else if (global_object[key].win_position === 1) {
                         winner_1.innerHTML = global_object[key].player_name;
                     }
-                    else if (global_object[key].win_position === 2)
-                    {
+                    else if (global_object[key].win_position === 2) {
                         winner_2.innerHTML = `${global_object[key].player_name}`;
                     }
-                    else if (global_object[key].win_position === 3)
-                    {
+                    else if (global_object[key].win_position === 3) {
                         winner_3.innerHTML = `${global_object[key].player_name}`;
                     }
                 });
 
-                winner_container.style.display = 'flex';
+                winner_container.style.visibility = 'visible';
             }
         }
         // console.log(typeof inside_obj.class);
@@ -1455,56 +1411,55 @@ let manage_defeaters = (defeated_mover_id, defeated_mover_class) => {
 
 
     console.log('Maybe defeated successfully');
-    if (players === 'all')
-    {
-        if(dice_number !== 6 )
-        {
-            if (turn_checker === 'blue')
-            {
+    if (players === 'all') {
+        if (dice_number !== 6) {
+            if (turn_checker === 'blue') {
                 turn_checker = 'yellow';
             }
-            else if (turn_checker === 'red')
-            {
+            else if (turn_checker === 'red') {
                 turn_checker = 'blue';
             }
-            else if (turn_checker === 'green')
-            {
+            else if (turn_checker === 'green') {
                 turn_checker = 'red';
             }
-            else if (turn_checker === 'yellow')
-            {
+            else if (turn_checker === 'yellow') {
                 turn_checker = 'green';
             }
         }
     }
-    else if (players === 'gb')
-    {
-        if(dice_number !== 6 )
-        {
+    else if (players === 'gb') {
+        if (dice_number !== 6) {
             console.log('condition checked', turn_checker)
-            if (turn_checker === 'blue')
-            {
+            if (turn_checker === 'blue') {
                 turn_checker = 'green';
             }
 
-            else if (turn_checker === 'green')
-            {
+            else if (turn_checker === 'green') {
                 turn_checker = 'blue';
             }
         }
     }
-    else if (players === 'ry')
-    {
-        if(dice_number !== 6 )
-        {
+    else if (players === 'ry') {
+        if (dice_number !== 6) {
             console.log('condition checked', turn_checker)
-            if (turn_checker === 'red')
-            {
+            if (turn_checker === 'red') {
                 turn_checker = 'yellow';
             }
 
-            else if (turn_checker === 'yellow')
-            {
+            else if (turn_checker === 'yellow') {
+                turn_checker = 'red';
+            }
+        }
+    }
+    else if (players === 'players3') {
+        if (dice_number !== 6) {
+            if (turn_checker === 'blue') {
+                turn_checker = 'green';
+            }
+            else if (turn_checker === 'red') {
+                turn_checker = 'blue';
+            }
+            else if (turn_checker === 'green') {
                 turn_checker = 'red';
             }
         }

@@ -42,10 +42,11 @@
 
         <div class="player_containers" id="red_player_container">
             <div class="resting_points">
-                <button id="rmb1" class="mover red_movers">
+                <button id="rmb1"  class="mover red_movers">
                     <img id="red_mover_1" class="mover_img" src="images/red_player.png" alt="mover">
                 </button>
             </div>
+
             <div class="resting_points">
                 <button id="rmb2" class="mover  red_movers">
                     <img id="red_mover_2" class="mover_img" src="images/red_player.png" alt="mover">
@@ -284,46 +285,59 @@
         <button id="choice1"></button>
         <button id="choice2"></button>
     </div>
-    <div class="winner_announcer">
-        <img id="winner_img" src="images/winner.png" alt="winner_img">
-        <p>is</p>
-        <span id="winner_id"></span>
-        <span id="winner_2"></span>
-        <span id="winner_3"></span>
-        <span id="winner_4"></span>
-    </div>
+
     <div id="player_inputs2">
         <label for="p1">Enter player 1</label>
-        <input type="text" id="p1">
+        <input type="text" id="p1" value="Player1">
         <label for="p2">Enter player 2</label>
-        <input type="text" id="p2">
+        <input type="text" id="p2" value="Player2">
 
         <button id="sub1" class = "submit">Play</button>
     </div>
     <div id="player_inputs3">
         <label for="p31">Enter player 1</label>
-        <input type="text" id="p31">
+        <input type="text" id="p31" value="Player1">
         <label for="p32">Enter player 2</label>
-        <input type="text" id="p32">
+        <input type="text" id="p32" value="Player2">
         <label for="p33">Enter player 3</label>
-        <input type="text" id="p33">
+        <input type="text" id="p33" value="Player3">
 
         <button id="sub3" class = "submit">Play</button>
     </div>
     <div id="player_inputs4">
         <label for="p41">Enter player 1</label>
-        <input type="text" id="p41">
+        <input type="text" id="p41" value="Player1">
         <label for="p42">Enter player 2</label>
-        <input type="text" id="p42">
+        <input type="text" id="p42" value="Player2">
         <label for="p43">Enter player 3</label>
-        <input type="text" id="p43">
+        <input type="text" id="p43" value="Player3">
         <label for="p44">Enter player 4</label>
-        <input type="text" id="p44">
+        <input type="text" id="p44" value="Player4">
         <button id="sub2" class = "submit">Play</button>
     </div>
     <h4 class="heading">
         -by SUBHAM KUMAR RAHAR
     </h4>
+</div>
+
+<div id="winner_announcer">
+    <video class="win_vid" autoplay loop>
+        <source src="Videos/winner.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img id="winner_img" src="images/winner.png" alt="winner_img">
+    <span id="winner_id"></span>
+    <div class="losers_player">
+        <p id="winner_2"></p>
+        <p id="winner_3"></p>
+        <p id="winner_4"></p>
+    </div>
+</div>
+<div class="enter">
+    <h2>
+        Please select only reasonable pieces, selecting a wrong or non reasonable piece will dismiss your chance
+    </h2>
+    <button id = "start_ludo">Enter Game</button>
 </div>
 
 <audio id="still_game" loop>
@@ -338,7 +352,7 @@
 <audio id="in_game" loop>
     <source src="game_sounds/in_game.ogg" type="audio/ogg">
 </audio>
-<audio id="winning">
+<audio id="winning" loop>
     <source src="game_sounds/winning.ogg" type="audio/ogg">
 </audio>
 <audio id="destroyed">

@@ -10,6 +10,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* position: absolute; */
     font-family: 'Poppins', sans-serif;
     /*overflow: scroll;*/
 }
@@ -316,10 +317,10 @@ body{
     background-color: #b2f5b2;
     text-shadow: 0 1px 10px #009d00;
 }
-.winner_announcer{
+#winner_announcer{
     position: absolute;
-    width:100%;
-    height:60%;
+    width:100vw;
+    height:80%;
     background: linear-gradient(90deg, #f87676, #ffec39);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -329,46 +330,92 @@ body{
     align-items: center;
     flex-direction: column;
     bottom: 0;
-    z-index: 999999;
-    display: none;
+    overflow: hidden;
+    z-index: 99999999;
+    /*display: none;*/
+    visibility: hidden;
 }
+.enter{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6cfa6c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    justify-content: center;
+}
+.enter h2{
+    padding: 20px;
+}
+#start_ludo{
+    /* position: absolute; */
+    z-index: 100000000000;
+    border-radius: 10px;
+    border: solid 0px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgb(4, 255, 17);
+    box-shadow: 0px 10px 20px black;
+    cursor: pointer;
+
+}
+.win_vid{
+    /*z-index: 1000000;*/
+    height: 100%;
+    /*width: 100vw;*/
+    position: absolute;
+    opacity: 0.94;
+
+}
+
 #winner_img{
     width: 40%;
     margin-top: -22vh;
+    z-index: 1;
 }
-.winner_announcer p{
-    font-size: 9vh;
-    font-weight: bold;
-    margin-top: -8vh;
-    background: linear-gradient(45deg, #43e509, #0033ff);
-    background-clip: text;
-    color: transparent;
-
+.losers_player{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    border-radius: 20px;
+    padding: 15px 40px 15px 40px;
+    gap: 40px;
+    margin-bottom: -142px;
+    margin-top: 122px;
+    color: white;
+    background: linear-gradient(45deg, rgba(120, 5, 5, 0.71), rgba(19, 43, 138, 0.76));
+    box-shadow: 0 10px 10px #000000;
+    z-index: 1;
+    /*transition: ease-in-out ,all, .5s;*/
+    /*border: solid black 1px;*/
+}
+.losers_player p{
+    font-size: 30px;
+    transition: all ease-in-out, all, .3s;
+}
+.losers_player p:hover{
+    font-size: 45px;
+    transform: translateY(-10px);
+    font-weight: 500;
+    cursor: pointer;
 }
 #winner_id{
     -webkit-text-stroke-width: 1px;
     font-size: 9vh;
     font-weight: bold;
-    -webkit-text-stroke-color: #16324d;
-    background: linear-gradient(45deg, #43e509, #0033ff);
-    background-clip: text;
-    box-shadow: 0 30px 60px #a43d3d;
+    /*-webkit-text-stroke-color: #16324d;*/
+    background: linear-gradient(45deg, rgba(120, 5, 5, 0.71), rgba(19, 43, 138, 0.76));
+    box-shadow: -4px 14px 20px #000000;
     border-radius: 10px;
-    color: transparent;
-}
-#winner_2{
-    font-size: 5.5vh;
-    color: #037a03;
-    font-weight: bold;
-}
-#winner_3{
-    font-size: 4.5vh;
-    color: #228f11;
-}
-#winner_4{
-    font-size: 3.5vh;
-    margin-bottom: -100px;
-    color: red;
+    padding: 0 60px 0 60px;
+    color: #ccbbf4;
+    z-index: 1;
 }
 #player_inputs2, #player_inputs4, #player_inputs3{
     display: flex;
@@ -393,32 +440,12 @@ body{
     font-size: 16px;
     font-weight: bold;
 }
-
 #red_player_name, #blue_player_name, #green_player_name, #yellow_player_name{
     position: absolute;
     font-size: 3vh;
     font-weight: bold;
     color: #112c0f;
 }
-
-/* .choice_container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content: center;
-    /* border: solid 1px black; */
-    /* gap: 10px; */
-/* } */
-/* .gb, .ry{
-    display: flex;
-    flex-direction: column;
-    border: solid 1px black;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-} */ 
-
 .themes{
     position:absolute;
     height: 100%;
@@ -474,9 +501,38 @@ body{
 }
 @media screen and (max-width:500px)
 {
+    body{
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        /* border: solid 10px black; */
+    }
+    html{
+        padding: 0;
+        margin: 0;
+    }
+    .choice, .two_pl_choice{
+        font-size: 22px;
+    }
     #game_container{
         width: 350px;
         height:350px;
+    }
+    #winner_id{
+        background: linear-gradient(45deg, rgba(120, 5, 5, 0.959), rgba(19, 43, 138, 0.938));
+        font-size: 55px;
+    }
+    #winner_img{
+        width: 200px;
+        margin-top: -230px;
+    }
+    .losers_player p{
+        font-size: 18px;
+    }
+    .losers_player{
+        gap: 20px;
+        padding: 10px 20px 10px 20px;
     }
     .yellow_movers{
         width: 16px !important;
@@ -488,4 +544,12 @@ body{
         font-size: 15px;
         font-weight: 350;
     }
+    .menu-div{
+        width: 340px;
+        height: 80%;
+    }
+    input{
+        text-align: center;
+    }
+    
 }
