@@ -551,5 +551,8 @@ body{
     input{
         text-align: center;
     }
+    #green_player_name, #blue_player_name, #red_player_name, #yellow_player_name{
+        font-size: 16px;
+    }
     
 }
