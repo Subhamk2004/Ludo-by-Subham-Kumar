@@ -14,7 +14,6 @@ body{
     font-family: 'Poppins', sans-serif;
     /*overflow: scroll;*/
 }
-
 #game_container{
     height: 85vh;
     width:85vh;
@@ -94,7 +93,6 @@ body{
     background-color: rgba(255, 254, 254, 0);
     /*z-index: -1;*/
 }
-
 #red_player_container{
     background: rgb(210, 4, 4);
 }
@@ -111,7 +109,6 @@ body{
     width: 100%;
     height: 100%;
 }
-
 #yellow_winning_line{
     background-color: #dae106;
 }
@@ -124,7 +121,6 @@ body{
 #red_winning_line{
     background-color: rgb(210, 4, 4);
 }
-
 .movable_line, .movable_line_winning{
     border: solid black 1px;
     height:16.66%;
@@ -135,8 +131,6 @@ body{
     width:16.66%;
     height:100%;
 }
-
-
 .dice_player_section{
     margin-top: 20px;
     margin-bottom: -90px;
@@ -151,7 +145,6 @@ body{
     gap: 20%;
     background: linear-gradient(60deg, rgba(37, 3, 3, 0.49), rgba(7, 31, 7, 0.55), rgba(7, 7, 56, 0.52), rgba(49, 49, 13, 0.51));
 }
-
 .choice{
     /*display: none;*/
     display: flex;
@@ -242,7 +235,6 @@ body{
     box-shadow: 0 5px 7px #000000;
     border-radius: 50%;
 }
-
 .mover{
     width: 25%;
     transition: all 0.3s ease-in-out;
@@ -262,11 +254,9 @@ body{
     /*z-index: 100000;*/
     transition: all 0.3s ease-in-out;
 }
-/* specific locations coloring*/
 #l51, #l12, #l25, #l38{
     background-color: white;
 }
-
 #l1{
     background-color: rgb(210, 4, 4);
 }
@@ -279,7 +269,6 @@ body{
 #l40{
     background-color: rgb(7, 91, 250);
 }
-
 .winning_portion{
     position: relative;
 }
@@ -287,7 +276,6 @@ body{
     position: absolute;
     /*z-index: -1;*/
 }
-
 .winners_stop{
     position: absolute;
     height:33%;
@@ -308,7 +296,6 @@ body{
 #wg6{
     left:33%;
 }
-
 .safe{
     display: flex;
     justify-content: center;
@@ -371,7 +358,6 @@ body{
     opacity: 0.94;
 
 }
-
 #winner_img{
     width: 40%;
     margin-top: -22vh;
@@ -417,14 +403,14 @@ body{
     color: #ccbbf4;
     z-index: 1;
 }
-#player_inputs2, #player_inputs4, #player_inputs3{
+#player_inputs2, #player_inputs4, #player_inputs3, #player_inputsT{
     display: flex;
     font-size: 20px;
     font-weight: bold;
     flex-direction: column;
     display: none;
 }
-#player_inputs2 input, #player_inputs4 input, #player_inputs3 input{
+#player_inputs2 input, #player_inputs4 input, #player_inputs3 input, #player_inputsT input{
     height: 40px;
     border-radius: 15px;
     border: none;

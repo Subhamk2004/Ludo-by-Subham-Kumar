@@ -11,6 +11,7 @@ let current_player_checker = document.querySelector('#current_player');
 let player_num_selector2 = document.getElementById('pl_choice1');
 let player_num_selector4 = document.getElementById('pl_choice2');
 let player_num_selector3 = document.getElementById('pl_choice3');
+let player_num_selectorT = document.getElementById('pl_choiceT');
 let player_num_menu = document.querySelector('.choice');
 let player_mover_menu = document.querySelector('.two_pl_choice');
 let gb = document.querySelector('#choice1');
@@ -24,15 +25,20 @@ let winner_container = document.querySelector('#winner_announcer');
 let two_players_input_menu = document.getElementById('player_inputs2');
 let four_players_input_menu = document.getElementById('player_inputs4');
 let three_players_input_menu = document.getElementById('player_inputs3');
+let T_players_input_menu = document.getElementById('player_inputsT');
 let two_players_name1 = document.getElementById('p1');
 let two_players_name2 = document.getElementById('p2');
 let four_players_name3 = document.getElementById('p43');
 let four_players_name4 = document.getElementById('p44');
 let four_players_name1 = document.getElementById('p41');
+let four_players_name2 = document.getElementById('p42');
 let three_players_name3 = document.getElementById('p33');
 let three_players_name2 = document.getElementById('p32');
 let three_players_name1 = document.getElementById('p31');
-let four_players_name2 = document.getElementById('p42');
+let T_players_name3 = document.getElementById('p43T');
+let T_players_name4 = document.getElementById('p44T');
+let T_players_name1 = document.getElementById('p41T');
+let T_players_name2 = document.getElementById('p42T');
 let player1;
 let player2;
 let player3;
@@ -40,6 +46,7 @@ let player4;
 let two_player_submit_btn = document.querySelector('#sub1');
 let four_player_submit_btn = document.querySelector('#sub2');
 let three_player_submit_btn = document.querySelector('#sub3');
+let T_player_submit_btn = document.querySelector('#subT');
 let player1_para = document.getElementById('blue_player_name');
 let player2_para = document.getElementById('red_player_name');
 let player3_para = document.getElementById('green_player_name');
@@ -50,8 +57,6 @@ winner_video.loop = true;
 winner_video.pause();
 
 
-// alert('Please select only reasonable pieces, selecting a wrong or non reasonable piece' +
-//     'will dismiss your chance');
 
 
 let global_object = {
@@ -71,7 +76,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'b'
+            winner: 'b',
+            team:'team1'
         },
         blue_mover_2: {
             is_opened: false,
@@ -88,7 +94,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'b'
+            winner: 'b',
+            team:'team1'
         },
         blue_mover_3: {
             is_opened: false,
@@ -105,7 +112,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'b'
+            winner: 'b',
+            team:'team1'
         },
         blue_mover_4: {
             is_opened: false,
@@ -122,11 +130,12 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'b'
+            winner: 'b',
+            team:'team1'
         },
         close_count: 4,
         win_count: 0,
-        win_position: 0
+        win_position: 0,
     },
     red_moverss: {
         red_mover_1: {
@@ -144,7 +153,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'r'
+            winner: 'r',
+            team:'team2'
         },
         red_mover_2: {
             is_opened: false,
@@ -161,7 +171,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'r'
+            winner: 'r',
+            team:'team2'
         },
         red_mover_3: {
             is_opened: false,
@@ -178,7 +189,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'r'
+            winner: 'r',
+            team:'team2'
         },
         red_mover_4: {
             is_opened: false,
@@ -195,11 +207,13 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'r'
+            winner: 'r',
+            team:'team2'
         },
         close_count: 4,
         win_count: 0,
-        win_position: 0
+        win_position: 0,
+    
     },
     green_moverss: {
         green_mover_1: {
@@ -217,7 +231,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'g'
+            winner: 'g',
+            team:'team3'
         },
         green_mover_2: {
             is_opened: false,
@@ -234,7 +249,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'g'
+            winner: 'g',
+            team:'team3'
         },
         green_mover_3: {
             is_opened: false,
@@ -251,8 +267,10 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'g'
-        }, green_mover_4: {
+            winner: 'g',
+            team:'team3'
+        }, 
+        green_mover_4: {
             is_opened: false,
             has_won: false,
             start_location: 14,
@@ -267,11 +285,12 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'g'
+            winner: 'g',
+            team:'team3'
         },
         close_count: 4,
         win_count: 0,
-        win_position: 0
+        win_position: 0,
     },
     yellow_moverss: {
         yellow_mover_1: {
@@ -289,7 +308,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'y'
+            winner: 'y',
+            team: 'team4'
         },
         yellow_mover_2: {
             is_opened: false,
@@ -306,7 +326,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'y'
+            winner: 'y',
+            team: 'team4'
         },
         yellow_mover_3: {
             is_opened: false,
@@ -323,7 +344,8 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'y'
+            winner: 'y',
+            team: 'team4'
         },
         yellow_mover_4: {
             is_opened: false,
@@ -340,11 +362,12 @@ let global_object = {
             current_win_pos: 0,
             home_x: 0,
             home_y: 0,
-            winner: 'y'
+            winner: 'y',
+            team: 'team4'
         },
         close_count: 4,
         win_count: 0,
-        win_position: 0
+        win_position: 0,
     }
 }
 
@@ -379,6 +402,13 @@ player_num_selector4.addEventListener('click', () => {
     player_num_menu.style.display = 'none';
     four_players_input_menu.style.display = 'flex';
     players = "all";
+})
+
+player_num_selectorT.addEventListener('click', () => {
+    click.play();
+    player_num_menu.style.display = 'none';
+    T_players_input_menu.style.display = 'flex';
+    players = "team";
 })
 
 player_num_selector3.addEventListener('click', () => {
@@ -464,6 +494,50 @@ four_player_submit_btn.addEventListener('click', function () {
     global_object.red_moverss.player_name = player2;
     global_object.yellow_moverss.player_name = player4;
     global_object.green_moverss.player_name = player3;
+    game_box.style.display = 'flex';
+    dice_menu.style.display = 'flex';
+    four_players_input_menu.style.display = 'none';
+    document.querySelector('.menu-div').style.display = 'none';
+});
+
+T_player_submit_btn.addEventListener('click', function () {
+    click.play(); still_game.loop = false;
+    still_game.pause();
+    start.play();
+    setTimeout(function () {
+        in_game.play();
+    }, 2000);
+    player1 = T_players_name1.value;
+    player2 = T_players_name2.value;
+    player3 = T_players_name3.value;
+    player4 = T_players_name4.value;
+    player1_para.innerHTML = player1;
+    player2_para.innerHTML = player2;
+    player3_para.innerHTML = player3;
+    player4_para.innerHTML = player4;
+    global_object.blue_moverss.player_name = player1;
+    global_object.red_moverss.player_name = player2;
+    global_object.yellow_moverss.player_name = player4;
+    global_object.green_moverss.player_name = player3;
+    global_object.blue_moverss.blue_mover_1.team = 'team1';
+    global_object.blue_moverss.blue_mover_2.team = 'team1';
+    global_object.blue_moverss.blue_mover_3.team = 'team1';
+    global_object.blue_moverss.blue_mover_4.team = 'team1';
+
+    global_object.green_moverss.green_mover_1.team = 'team1';
+    global_object.green_moverss.green_mover_2.team = 'team1';
+    global_object.green_moverss.green_mover_3.team = 'team1';
+    global_object.green_moverss.green_mover_4.team = 'team1';
+
+    global_object.red_moverss.red_mover_1.team = 'team2';
+    global_object.red_moverss.red_mover_2.team = 'team2';
+    global_object.red_moverss.red_mover_3.team = 'team2';
+    global_object.red_moverss.red_mover_4.team = 'team2';
+
+    global_object.yellow_moverss.yellow_mover_1.team = 'team2';
+    global_object.yellow_moverss.yellow_mover_2.team = 'team2';
+    global_object.yellow_moverss.yellow_mover_3.team = 'team2';
+    global_object.yellow_moverss.yellow_mover_4.team = 'team2';
     game_box.style.display = 'flex';
     dice_menu.style.display = 'flex';
     four_players_input_menu.style.display = 'none';
@@ -702,7 +776,7 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, yellow_movers);
         }
     }
-    else if (players === 'all') {
+    else if (players === 'all' || players === 'team') {
         if (turn_checker === 'blue') {
             blue_movers.forEach(function (item) {
                 item.disabled = false;
@@ -834,7 +908,6 @@ let move_mover = (dice_number) => {
             actual_mover(dice_num, yellow_movers);
         }
     }
-
     else if (players === 'players3') {
         if (turn_checker === 'blue') {
             blue_movers.forEach(function (item) {
@@ -1126,13 +1199,17 @@ let mover_further = (inside_obs, dice_output) => {
             defeated_mover_class = item[2];
             let spliced = movers_position_arr.splice(index, 1);
             console.log(spliced);
-            manage_defeaters(defeated_mover, defeated_mover_class);
+            console.log(inside_obs.team, item[3]);
+            if(inside_obs.team !== item[3])
+            {
+                manage_defeaters(defeated_mover, defeated_mover_class);
+            }
             array_pos_checker = 1;
         }
     });
 
     if (array_pos_checker === 0) {
-        movers_position_arr.push([new_position_id, inside_obs.id, inside_obs.class]);
+        movers_position_arr.push([new_position_id, inside_obs.id, inside_obs.class, inside_obs.team]);
     }
     else {
         array_pos_checker = 0;
@@ -1214,7 +1291,7 @@ let winning_moves = (winner_moves, inside_obj) => {
     }
     if (next_win_pos === 6) {
 
-        if (players === 'all') {
+        if (players === 'all' || players === 'team') {
             if (dice_number !== 6) {
                 if (turn_checker === 'blue') {
                     turn_checker = 'yellow';
@@ -1371,6 +1448,35 @@ let winning_moves = (winner_moves, inside_obj) => {
                 winner_container.style.visibility = 'visible';
             }
         }
+        if (players === 'team') {
+            if (winner === 2) {
+                in_game.pause();
+                in_game.loop = false;
+                winning.play();
+                winner_video.play();
+                winning.loop = true;
+                clearTimeout(playback);
+                mover_in.pause();
+                dice.disabled = true;
+                // console.log('checking is it entered or not');
+                Object.entries(global_object).forEach(([key, value]) => {
+                    if (global_object[key].win_position === 0) {
+                        if(global_object[key].class === 'blue_moverss' || global_object[key].class ==='green_moverss') {
+                            loser.innerHTML = `Losers are ${global_object.blue_moverss.player_name} & ${global_object.green_moverss.player_name}`;
+                            winner_1.innerHTML = `${global_object[key].red_moverss.player_name} ${global_object[key].yellow_moverss.player_name}`;
+                        }
+                        else if(global_object[key].class === 'red_moverss' || global_object[key].class ==='yellow_moverss') {
+                            loser.innerHTML = `Losers are ${global_object.red_moverss.player_name} & ${global_object.yellow_moverss.player_name}`;
+                            winner_1.innerHTML = `${global_object[key].blue_moverss.player_name} ${global_object[key].green_moverss.player_name}`;
+                        }
+                        
+                    }
+                    
+                });
+
+                winner_container.style.visibility = 'visible';
+            }
+        }
         // console.log(typeof inside_obj.class);
     }
     dice.disabled = false;
@@ -1411,7 +1517,7 @@ let manage_defeaters = (defeated_mover_id, defeated_mover_class) => {
 
 
     console.log('Maybe defeated successfully');
-    if (players === 'all') {
+    if (players === 'all' || players === 'team') {
         if (dice_number !== 6) {
             if (turn_checker === 'blue') {
                 turn_checker = 'yellow';
