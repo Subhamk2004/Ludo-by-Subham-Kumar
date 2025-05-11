@@ -64,7 +64,7 @@ This project is a lightweight, accessible online version of the traditional Ludo
 
 ## 🌐 Online Access
 
-Play directly from GitHub Pages: [Online Ludo Game](https://subhamk2004.github.io/ludo-game/)
+Play directly from GitHub Pages: [Online Ludo Game](https://subhamk2004.github.io/Ludo-by-Subham-Kumar/)
 
 ## 🎯 Game Rules
 
@@ -94,13 +94,9 @@ The game includes several audio elements to enhance gameplay:
 
 Developed by **Subham Kumar Rahar**
 
-## 📄 License
-
-[MIT License](LICENSE)
-
 ## 🙏 Acknowledgements
 
-Thank you for checking out this project! Feel free to fork and contribute improvements or report any issues you encounter while playing.
+Thank you for checking out this project! If you liked the project please ⭐ star the repo, it motivates me to create more projects like this. Feel free to fork and contribute improvements or report any issues you encounter while playing.
 
 ---
 
